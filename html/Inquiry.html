@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>BUILD UP > Inquiry</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="../css/Inquiry.css">
+  <link rel="stylesheet" href="../css/animate.css">
+  <script src="../js/jquery-3.4.1.min.js"></script>
+  <script src="../js/wow.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+
+
+    <script>
+        $(document).ready(function(){
+            //햄버거 메뉴
+           $(".hamburger").click(function(){
+                $(".click-hamburger").stop().show();    
+                $(this).toggleClass("is-active");
+                $(".click-hamburger").toggleClass("click");
+                $(".main-hamburger").css({"right":"0"});
+               
+            }); 
+            
+            
+            //header 두번째 콘텐츠 이동시 색깔바뀜
+            $(window).scroll(function(){
+               var scroll = $(window).scrollTop();
+                
+                var ht= $(window).height();
+
+                var scroll = $(window).scrollTop();
+                
+             
+                    if(scroll >=ht){                    
+                        $("#navTop").css({"background":"white","transition":"0.5s"});
+                        $('#navTop>h1>a>img').attr({src:'../images/logo.png',alt:'빌드업로고'});
+                        $(".hamburger>.line").css({"background":"black"});
+                    }else{
+                        $("#navTop").css({"background":"rgba(0,0,0,0)"});
+                        $('#navTop>h1>a>img').attr({src:'../images/logo_white.png',alt:'빌드업화이트로고'});
+                        $(".hamburger>.line").css({"background":"white"});
+                    };
+            });
+            
+            
+           //scorll-Top        
+                $("#top").click(function(){
+                    $('html,body').animate({scrollTop:0},1000);
+                });
+
+            new WOW().init();
+
+        });
+    </script>
+    
+    <style>
+        @media screen and (-ms-high-contrast:active), all and (-ms-high-contrast:none) {figure>.main_ment{
+            color: #fff;
+        }
+        }
+        
+        @media all and (max-width:1500px){
+            figure>.main_ment{font-size: 110px;} 
+            .inquiry>table{width: 80%;}
+            .inquiry>.agree{width: 80%;}
+        }
+        @media all and (min-width:1065px) and (max-width:1499px){
+            .scroll{left: 43%;}
+        }
+       @media all and (max-width:1064px){ 
+           .main-hamburger{width: 100%;}
+           .scroll{background-size: 80%; left: 40%;}
+           figure>.main_ment{font-size: 71px;}
+           figure>.sub_ment{font-size: 20px; top: 48%;}  
+           .inquiry>table{width: 95%;}
+           .inquiry>.agree{width: 95%;}
+           .inquiry>.agree>h2{font-size: 22px;}
+           .inquiry>table>tbody>tr>td>.input{width: 75% !important;}
+        }
+
+       @media all and (max-width:739px){ 
+           .main-hamburger{width: 100%;}
+           footer{font-size: 14px;}
+           .scroll{display: none;}
+           #main-content1{max-width: 100%;}
+           figure>.main_ment{font-size: 71px;}
+           figure>.sub_ment{font-size: 20px; top: 48%;}
+           .inquiry>.agree>a>p{width: 148px; padding: 12px; margin-bottom: 20%; font-size: 16px;}
+        }
+        @media all and (max-width:610px){
+            figure>.main_ment{font-size: 50px; line-height: 54px; padding: 10px; top: 42%;}
+            figure>.sub_ment{font-size: 16px; top: 51%; padding: 13px; line-height:24px;}
+            .scroll{display: none;}
+            .main-hamburger{width: 100%;}
+            .our{font-size: 32px;}
+            .our-sub{font-size: 16px;}
+            .inquiry>table>tbody>tr>td{padding: 15px; font-size: 15px;}
+            .inquiry>.agree>h2{font-size: 19px;}
+            .inquiry>.agree>.right{font-size: 15px;}
+            footer{font-size: 12px;}    
+            
+        }
+        
+        @media all and (max-width:450px){ 
+            #navTop>h1{width: 105px; left: 37%;}
+            #navTop>#nav_menu{padding: 4px 0; right: -0.5%;}
+            #nav_menu>.row{margin-top: 0px;}
+            .main-hamburger{width: 100%;}
+            .main-hamburger>.click-hamburger>.ham_menu{transform: translate(0px, 25%); font-size: 35px; line-height: 90px;}
+            .hamburger>.line{width: 30px; margin: 7px 0; }
+        }
+    </style>
+     
+</head>
+<body>
+    
+ <div id="wrap">
+
+    <header>
+        <nav id="navTop" style="z-index: 9">
+               <h1><a href="../index.html"><img src="../images/logo_white.png" alt="빌드업로고"></a></h1>
+               
+            <div id="nav_menu">
+               <div class="row cf">
+                  <div class="three col">
+                    <div class="hamburger" id="hamburger-1">
+                          <span class="line"></span>
+                          <span class="line"></span>
+                          <span class="line"></span>
+                    </div>
+                  </div>
+              </div>
+              
+           </div>
+             
+           <div class="main-hamburger">
+               <div class="click-hamburger">
+                   <ul class="ham_menu">
+                        <li><a href="../html/AboutUs.html">About Us</a></li>
+                        <li><a href="../html/Business.html">Business</a></li>
+                        <li><a href="../html/Career.html">Career</a></li>
+                        <li><a href="../html/Inquiry.html">Inquiry</a></li>
+                        <li><a href="../html/Notice.html">Notice</a></li>
+                  </ul>
+               </div>
+           </div>
+        </nav>
+    </header>
+
+    <figure>
+        <p class="main_ment"><span>I</span>nquiry</p>
+        <p class="sub_ment">BUILD UP은 고객의 꿈과 행복을 위해 더 나은 공간의 가치를 창조합니다.
+        </p>
+    </figure>
+    
+    <a href="#content-box"><div class="scroll"></div>  </a>
+   
+    <section id="content-1">
+        <div class="line"></div>
+        <div class="our wow fadeInUp" data-wow-delay="0.2s">INQUIRY</div>
+        <p class="our-sub">업무제휴 및 기타 문의하실 내용을 남겨주세요.</p>
+        
+        <div class="inquiry">
+            <table>
+                <tbody>
+                    <tr class="first">
+                        <td style="width: 30%">이름</td>
+                        <td><input type="text" style="width: 50%" class="input"></td>
+                    </tr>
+                    <tr>
+                        <td>회사</td>
+                        <td><input type="text" style="width: 50%" class="input"></td>
+                    </tr>
+                    <tr>
+                        <td>연락처</td>
+                        <td><input type="text" style="width: 50%" class="input"></td>
+                    </tr>
+                    <tr>
+                        <td>E-MAIL</td>
+                        <td><input type="text" style="width: 50%" class="input"></td>
+                    </tr>
+                    <tr class="last">
+                        <td>문의내용</td>
+                        <td><input type="text" style="width: 100%" class="inquiry"></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="agree">
+                <h2>개인정보 수집 및 이용에 대한 안내 (필수)</h2>
+                <textarea name="agree" id="in_agree">개인정보의 수집, 이용목적
+- 서비스 이용에 따른 본인 식별
+- 고지사항 전달, 불만처리 의사소통 경로 확보
+- 기타 원활한 양질의 서비스 제공 등
+
+수집하는 개인 정보의 항목
+- 성명, 이메일주소, 연락처
+
+개인정보의 보유 및 이용기간
+- 원칙적으로 개인정보의 수집 또는 제공받은 목적 달성 시 지체없이 파기합니다.
+                </textarea>
+                
+                <div class="right">
+                     <input type="radio" id="radio"> 동의합니다.
+                </div>
+                
+                <a href="../index.html"><p>문의하기</p></a>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+    
+    
+    <footer>
+       <div class="footer_img">
+           <a href="../index.html">
+           <img src="../images/logo_white.png" alt="footer 로고이미지" style="width: 130px">
+           </a>
+       </div>
+        <adress>
+            서울시 강남구 선릉로 130길 / 대표 이소연 / 사업자등록번호 125-52-52200<br>
+대표전화 02.123.4567 / 팩스 02.123.4567 <br>Copyright(c) 2019 BUILD UP. All Rights Reserved.
+        </adress>
+        
+        <div id="top">
+        <img src="../images/up-arrow.jpg" alt="goto top" width="50px">
+    </div>
+    </footer>
+    
+    
+</div>
+    
+</body>
+</html>

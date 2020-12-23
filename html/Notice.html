@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>BUILD UP > Notice</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="../css/Notice.css">
+  <link rel="stylesheet" href="../css/animate.css">
+  <script src="../js/jquery-3.4.1.min.js"></script>
+  <script src="../js/wow.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+
+
+    <script>
+        $(document).ready(function(){
+            //햄버거 메뉴
+           $(".hamburger").click(function(){
+                $(".click-hamburger").stop().show();    
+                $(this).toggleClass("is-active");
+                $(".click-hamburger").toggleClass("click");
+                $(".main-hamburger").css({"right":"0"});
+               
+            }); 
+            
+            
+            //header 두번째 콘텐츠 이동시 색깔바뀜
+            $(window).scroll(function(){
+               var scroll = $(window).scrollTop();
+                
+                var ht= $(window).height();
+
+                var scroll = $(window).scrollTop();
+                
+             
+                    if(scroll >=ht){                    
+                        $("#navTop").css({"background":"white","transition":"0.5s"});
+                        $('#navTop>h1>a>img').attr({src:'../images/logo.png',alt:'빌드업로고'});
+                        $(".hamburger>.line").css({"background":"black"});
+                    }else{
+                        $("#navTop").css({"background":"rgba(0,0,0,0)"});
+                        $('#navTop>h1>a>img').attr({src:'../images/logo_white.png',alt:'빌드업화이트로고'});
+                        $(".hamburger>.line").css({"background":"white"});
+                    };
+            });
+           
+           //공지사항 쪽수
+
+                    var i=0;
+                    console.log($("table").index());
+                    $(".n1").show();
+                    $(".num_1").addClass("onClick");
+                    $(".num_2").removeClass("onClick");
+                    $(".num_3").removeClass("onClick");
+                    $(".n2").hide();
+                    $(".n3").hide();
+
+                    $(".front_page").click(function(e){
+                        e.preventDefault();
+                        $(".n1").show();
+                        $(".num_1").addClass("onClick");
+                        $(".num_2").removeClass("onClick");
+                        $(".num_3").removeClass("onClick");
+                        $(".n2").hide();
+                        $(".n3").hide();
+                    });
+
+                    $(".prev").click(function(e){
+                        e.preventDefault();
+                        switch(i){
+                            case 1:
+                                i = 0;
+                                $(".n1").show();
+                                $(".num_1").addClass("onClick");
+                                $(".num_2").removeClass("onClick");
+                                $(".num_3").removeClass("onClick");
+                                $(".n2").hide();
+                                $(".n3").hide();
+                                break;
+                            case 2:
+                                i = 1;
+                                $(".n2").show();
+                                $(".num_2").addClass("onClick");
+                                $(".num_1").removeClass("onClick");
+                                $(".num_3").removeClass("onClick");
+                                $(".n1").hide();
+                                $(".n3").hide();
+                                break;
+                            case 3:
+                                i = 2;
+                                $(".n3").show();
+                                $(".num_3").addClass("onClick");
+                                $(".num_1").removeClass("onClick");
+                                $(".num_2").removeClass("onClick");
+                                $(".n1").hide();
+                                $(".n2").hide();
+                                break;
+
+                        }
+
+                    });
+
+                    $(".num_1").click(function(e){
+                        e.preventDefault();
+                        i = 0;
+                        $(".n1").show();
+                        $(".num_1").addClass("onClick");
+                        $(".num_2").removeClass("onClick");
+                        $(".num_3").removeClass("onClick");
+                        $(".n2").hide();
+                        $(".n3").hide();
+                    });
+                    $(".num_2").click(function(e){
+                        e.preventDefault();
+                        i = 1;
+                        $(".n2").show();
+                        $(".num_2").addClass("onClick");
+                        $(".num_1").removeClass("onClick");
+                        $(".num_3").removeClass("onClick");
+                        $(".n1").hide();
+                        $(".n3").hide();
+                    });
+                    $(".num_3").click(function(e){
+                        e.preventDefault();
+                        i = 2;
+                        $(".n3").show();
+                        $(".num_3").addClass("onClick");
+                        $(".num_1").removeClass("onClick");
+                        $(".num_2").removeClass("onClick");
+                        $(".n1").hide();
+                        $(".n2").hide();
+                    });
+
+
+                    $(".next").click(function(e){
+                        e.preventDefault();
+                        switch(i){
+                            case 0:
+                                i = 1;
+                                $(".n2").show();
+                                $(".num_2").addClass("onClick");
+                                $(".num_1").removeClass("onClick");
+                                $(".num_3").removeClass("onClick");
+                                $(".n1").hide();
+                                $(".n3").hide();
+                                break;
+                            case 1:
+                                i = 2;
+                                $(".n3").show();
+                                $(".num_3").addClass("onClick");
+                                $(".num_1").removeClass("onClick");
+                                $(".num_2").removeClass("onClick");
+                                $(".n1").hide();
+                                $(".n2").hide();
+                                break;
+
+                        }
+
+                    });
+
+                    $(".back_page").click(function(e){
+                        e.preventDefault();
+                        $(".n3").show();
+                        $(".num_3").addClass("onClick");
+                        $(".num_1").removeClass("onClick");
+                        $(".num_2").removeClass("onClick");
+                        $(".n1").hide();
+                        $(".n2").hide();
+                    });
+            
+            
+           //scorll-Top        
+                $("#top").click(function(){
+                    $('html,body').animate({scrollTop:0},1000);
+                });
+
+            new WOW().init();
+
+        });
+    </script>
+    
+    <style>
+        @media screen and (-ms-high-contrast:active), all and (-ms-high-contrast:none) {figure>.main_ment{
+            color: #fff;
+        }
+        }
+        @media all and (max-width:1500px){
+            figure>.main_ment{font-size: 110px;} 
+        }
+        @media all and (min-width:1065px) and (max-width:1499px){
+            .scroll{left: 43%;}
+        }
+        @media screen and (min-width:1200px) and (max-width:1399px){
+            #section_1 .news {width: 90%; margin: 0 auto;}
+            #section_1 .news thead {border-top: 2px solid #0081c5; border-bottom: 1px solid grey;}
+            #section_1 .news thead tr {}
+            #section_1 .news thead tr td {font-weight: bold; font-size: 18px; padding-top: 1%; padding-bottom: 1%; padding-right: 1%; padding-left: 1%; text-align: center;}
+            #section_1 .news thead tr td.hnumber {width: 15%;}
+            #section_1 .news thead tr td.hname {width: 70%;}
+            #section_1 .news thead tr td.hdate {width: 15%;}
+            #section_1 .news tbody {margin: 0; padding: 0;}
+            #section_1 .news tbody tr {}
+            #section_1 .news tbody tr td {padding-top: 1.5%; padding-bottom: 1.5%;}
+            #section_1 .news tbody tr td.number {width: 15%; text-align: center; border-bottom: 1px solid grey; font-size: 18px;}
+            #section_1 .news tbody tr td.name {width: 70%; text-align: left; padding-left: 2%; border-bottom: 1px solid grey; font-size: 18px;}
+            #section_1 .news tbody tr td.date {width: 15%; text-align: center; border-bottom: 1px solid grey; font-size: 18px;}
+}
+        @media screen and (min-width:800px) and (max-width:1199px){
+            #section_1 .news {width: 90%; margin: 0 auto;}
+            #section_1 .news thead {border-top: 3px solid #0081c5; border-bottom: 1px solid grey;}
+            #section_1 .news thead tr {}
+            #section_1 .news thead tr td {font-weight: bold; font-size: 17px; padding-top: 1%; padding-bottom: 1%; padding-right: 1%; padding-left: 1%; text-align: center;}
+            #section_1 .news thead tr td.hnumber {width: 15%;}
+            #section_1 .news thead tr td.hname {width: 70%;}
+            #section_1 .news thead tr td.hdate {width: 15%;}
+            #section_1 .news tbody {margin: 0; padding: 0;}
+            #section_1 .news tbody tr {}
+            #section_1 .news tbody tr td {padding-top: 1.5%; padding-bottom: 1.5%;}
+            #section_1 .news tbody tr td.number {width: 15%; text-align: center; border-bottom: 1px solid grey; font-size: 16px;}
+            #section_1 .news tbody tr td.name {width: 70%; text-align: left; padding: 20px; border-bottom: 1px solid grey; font-size: 16px;}
+            #section_1 .news tbody tr td.date {width: 15%; text-align: center; border-bottom: 1px solid grey; font-size: 16px;}
+
+            #section_1 .page_num .front_page {display: inline-block; width: 25px; height: 24px; padding-top: 5px; background: url(images/front.png); position: relative; top: 10px; margin-right: 1%; background-size: cover;}
+
+            #section_1 .page_num .prev {display: inline-block; width: 25px; height: 24px; background: url(images/prev.png); position: relative; top: 10px; margin-right: 1%; background-size: cover;}
+
+            #section_1 .page_num .num_1 {display: inline-block; width: 25px; height: 24px; line-height: 24px; margin-right: 1%; position: relative; top: 2px; font-size: 15px;}
+
+
+            #section_1 .page_num .num_2 {display: inline-block; width: 25px; height: 24px; line-height: 24px; margin-right: 1%; position: relative; top: 2px; font-size: 15px;}
+
+            #section_1 .page_num .num_3 {display: inline-block; width: 25px; height: 24px; line-height: 24px; margin-right: 1%; position: relative; top: 2px; font-size: 15px;}
+
+
+            #section_1 .page_num .next {display: inline-block; width: 25px; height: 24px; background: url(images/next.png); margin-right: 1%; position: relative; top: 10px; background-size: cover;}
+
+            #section_1 .page_num .back_page {display: inline-block; width: 25px; height: 24px; background: url(images/back.png); position: relative; top: 10px; background-size: cover;}
+}
+       @media all and (max-width:1064px){ 
+           .main-hamburger{width: 100%;}
+           .scroll{background-size: 80%; left: 40%;}
+           figure>.main_ment{font-size: 71px;}
+           figure>.sub_ment{font-size: 20px; top: 48%;}  
+           
+        }
+       @media all and (min-width:30px) and (max-width:800px){
+
+            p.new{font-size: 24px;}
+            #section_1 .searchbox .selectbox{height: 45px; text-indent: 3vw; font-size: 12px; background-size: 15px 17px; background-position: 117px 13px;}
+            #section_1 .searchbox .text{height: 45px; font-size: 12px;}
+            #section_1 .fa-search{font-size: 17px; width: 45px; height: 45px; line-height: 45px;}
+            #section_1 .news {width: 90%; margin: 0 auto;}
+            #section_1 .news thead {border-top: 3px solid #0081c5; border-bottom: 1px solid grey;}
+            #section_1 .news thead tr {}
+            #section_1 .news thead tr td {font-weight: bold; font-size: 14px; padding: 8px; text-align: center;}
+            #section_1 .news thead tr td.hnumber {width: 15%;}
+            #section_1 .news thead tr td.hname {width: 70%;}
+            #section_1 .news thead tr td.hdate {width: 15%;}
+            #section_1 .news tbody {margin: 0; padding: 0;}
+            #section_1 .news tbody tr {}
+            #section_1 .news tbody tr td {padding-top: 5%; padding-bottom: 5%;}
+            #section_1 .news tbody tr td.number {width: 13%; text-align: center; border-bottom: 1px solid grey; font-size: 14px;}
+            #section_1 .news tbody tr td.name {width: 70%; text-align: left; padding-left: 2%; border-bottom: 1px solid grey; font-size: 14px; padding-right: 2%;}
+            #section_1 .news tbody tr td.date {width: 17%; text-align: center; border-bottom: 1px solid grey; font-size: 14px;}
+            #section_1 .page_num .front_page {display: inline-block; width: 25px; height: 24px; padding-top: 5px; background: url(../images/Notice/front.png); position: relative; top: 10px; margin-right: 1%; background-size: cover;}
+
+            #section_1 .page_num .prev {display: inline-block; width: 25px; height: 24px; background: url(../images/Notice/prev.png); position: relative; top: 10px; margin-right: 1%; background-size: cover;}
+
+            #section_1 .page_num .num_1 {display: inline-block; width: 25px; height: 24px; line-height: 24px; margin-right: 1%; position: relative; top: 2px; font-size: 14px;}
+
+            #section_1 .page_num .num_2 {display: inline-block; width: 25px; height: 24px; line-height: 24px; margin-right: 1%; position: relative; top: 2px; font-size: 14px;}
+
+            #section_1 .page_num .num_3 {display: inline-block; width: 25px; height: 24px; line-height: 24px; margin-right: 1%; position: relative; top: 2px; font-size: 14px;}
+
+
+            #section_1 .page_num .next {display: inline-block; width: 25px; height: 24px; background: url(../images/Notice/next.png); margin-right: 1%; position: relative; top: 10px; background-size: cover;}
+
+            #section_1 .page_num .back_page {display: inline-block; width: 25px; height: 24px; background: url(../images/Notice/back.png); position: relative; top: 10px; background-size: cover;}
+	
+}
+       @media all and (max-width:739px){ 
+           .main-hamburger{width: 100%;}
+           footer{font-size: 14px;}
+           .scroll{display: none;}
+           #main-content1{max-width: 100%;}
+           figure>.main_ment{font-size: 71px;}
+           figure>.sub_ment{font-size: 20px; top: 48%;}
+           .scroll{display: none;}
+        }
+        @media all and (max-width:610px){
+            figure>.main_ment{font-size: 50px; line-height: 54px; padding: 10px; top: 42%;}
+            figure>.sub_ment{font-size: 16px; top: 50%; padding: 13px; line-height:24px;}
+            .scroll{display: none;}
+            .our{font-size: 32px;}
+            .our-sub{font-size: 16px;}
+            section{margin-bottom: 80px;}
+            .main-hamburger{width: 100%;}
+            footer{font-size: 12px;}    
+            
+        }
+        
+        @media all and (max-width:450px){ 
+            #navTop>h1{width: 105px; left: 37%;}
+            #navTop>#nav_menu{padding: 4px 0; right: -0.5%;}
+            #nav_menu>.row{margin-top: 0px;}
+            .main-hamburger{width: 100%;}
+            .main-hamburger>.click-hamburger>.ham_menu{transform: translate(0px, 25%); font-size: 35px; line-height: 90px;}
+            .hamburger>.line{width: 30px; margin: 7px 0; }
+        }
+    </style>
+     
+</head>
+<body>
+    
+ <div id="wrap">
+
+    <header>
+        <nav id="navTop" style="z-index: 9">
+               <h1><a href="../index.html"><img src="../images/logo_white.png" alt="빌드업로고"></a></h1>
+               
+            <div id="nav_menu">
+               <div class="row cf">
+                  <div class="three col">
+                    <div class="hamburger" id="hamburger-1">
+                          <span class="line"></span>
+                          <span class="line"></span>
+                          <span class="line"></span>
+                    </div>
+                  </div>
+              </div>
+              
+           </div>
+             
+           <div class="main-hamburger">
+               <div class="click-hamburger">
+                   <ul class="ham_menu">
+                        <li><a href="../html/AboutUs.html">About Us</a></li>
+                        <li><a href="../html/Business.html">Business</a></li>
+                        <li><a href="../html/Career.html">Career</a></li>
+                        <li><a href="../html/Inquiry.html">Inquiry</a></li>
+                        <li><a href="../html/Notice.html">Notice</a></li>
+                  </ul>
+               </div>
+           </div>
+        </nav>
+    </header>
+
+    <figure>
+        <p class="main_ment"><span>N</span>otice</p>
+        <p class="sub_ment">열린 시각과 마음으로 고객 미래가치를 창조하는 BUILD UP의 도전정신
+        </p>
+    </figure>
+    
+    <a href="#content-box"><div class="scroll"></div>  </a>
+   
+    
+    <section>	
+        <div class="line"></div>
+        <div class="our wow fadeInUp" data-wow-delay="0.2s">NOTICE</div>
+        <p class="our-sub">BUILD UP의 공지사항을 확인할 수 있습니다.</p>	
+    		<div id="section_1">
+    			<div class="searchbox">
+    				<form action="post" class="searcharea">
+    					<fieldset>
+    						<legend>게시물검색</legend>
+    						<select name="select1" id="select1" class="selectbox">
+    							<option value>전체</option>
+    							<option value="1">제목</option>
+    							<option value="2">내용</option>
+    						</select>
+    						<input type="text" class="text" title="검색어" placeholder="검색어를 입력하세요.">
+    						<i class="fa fa-search"></i>
+    					</fieldset>
+    				</form>
+    			</div>
+    		
+    		  
+    		
+    			
+    			<table class="news n1">
+    				<thead>
+    					<tr>
+    						<td class="hnumber">번호</td>
+    						<td class="hname">제목</td>
+    						<td class="hdate">등록일</td>
+    					</tr>
+    				</thead>
+    				<tbody>
+    					<tr>
+    						<td class="number">23</td>
+    						<td class="name"><a href="#1">새 TV광고로 브랜드 강화 본격 시동</a></td>
+    						<td class="date">2019 - 11 - 24</td>
+    					</tr>
+    					<tr>
+    						<td class="number">22</td>
+    						<td class="name"><a href="#1">북한산 밑자락 '삼흥연립' 재건축 시공사 선정</a></td>
+    						<td class="date">2019 - 11 - 15</td>
+    					</tr>
+    					<tr>
+    						<td class="number">21</td>
+    						<td class="name"><a href="#1">830억 규모 송파 올림픽회관 리모델링 공사 수주</a></td>
+    						<td class="date">2019 - 11 - 08</td>
+    					</tr>
+    					<tr>
+    						<td class="number">20</td>
+    						<td class="name"><a href="#1">735억대 부산해운대 삼성콘도맨션 재건축 수주</a></td>
+    						<td class="date">2019 - 10 - 17</td>
+    					</tr>
+    					<tr>
+    						<td class="number">19</td>
+    						<td class="name"><a href="#1">용인 마북동 공동주택 신축 수주</a></td>
+    						<td class="date">2019 - 10 - 03</td>
+    					</tr>
+    					<tr>
+    						<td class="number">18</td>
+    						<td class="name"><a href="#1">서울 방배동 신성빌라 재건축 수주</a></td>
+    						<td class="date">2019 - 09 - 04</td>
+    					</tr>
+    					<tr>
+    						<td class="number">17</td>
+    						<td class="name"><a href="#1">707억원 규모 군 시설 공사 수주</a></td>
+    						<td class="date">2019 - 08 - 28</td>
+    					</tr>
+    					<tr>
+    						<td class="number">16</td>
+    						<td class="name"><a href="#1">협력사에 거래대금 650억 원 조기 지급</a></td>
+    						<td class="date">2019 - 08 - 12</td>
+    					</tr>
+    					<tr>
+    						<td class="number">15</td>
+    						<td class="name"><a href="#1">전북 군산신역세권 공동주택 공사 수주</a></td>
+    						<td class="date">2019 - 07 - 19</td>
+    					</tr>
+    					<tr>
+    						<td class="number">14</td>
+    						<td class="name"><a href="#1">서대문구 홍제2구역 도시환경정비사업 수주</a></td>
+    						<td class="date">2019 - 07 - 02</td>
+    					</tr>
+    				</tbody>
+    			</table>
+    			
+    			<table class="news n2">
+    				<thead>
+    					<tr>
+    						<td class="hnumber">번호</td>
+    						<td class="hname">제목</td>
+    						<td class="hdate">등록일</td>
+    					</tr>
+    				</thead>
+    				<tbody>
+    					<tr>
+    						<td class="number">13</td>
+    						<td class="name"><a href="#1">반포현대아파트 재건축한 '반포 센트레빌' 8월 중 분양</a></td>
+    						<td class="date">2019 - 06 - 30</td>
+    					</tr>
+    					<tr>
+    						<td class="number">12</td>
+    						<td class="name"><a href="#1">대구지역 가로주택정비사업 수주</a></td>
+    						<td class="date">2019 - 06 - 15</td>
+    					</tr>
+    					<tr>
+    						<td class="number">11</td>
+    						<td class="name"><a href="#1">건설사간 상호협력평가 최우수업체 선정</a></td>
+    						<td class="date">2019 - 05 - 01</td>
+    					</tr>
+    					<tr>
+    						<td class="number">10</td>
+    						<td class="name"><a href="#1">광명~서울 민자 고속도로 공사 수주</a></td>
+    						<td class="date">2019 - 04 - 29</td>
+    					</tr>
+    					<tr>
+    						<td class="number">9</td>
+    						<td class="name"><a href="#1">당진 수청1지구에 2725가구 대단지 짓는다</a></td>
+    						<td class="date">2019 - 04 - 15</td>
+    					</tr>
+    					<tr>
+    						<td class="number">8</td>
+    						<td class="name"><a href="#1">서소문성지 역사공원ㆍ박물관 - BUILD UP</a></td>
+    						<td class="date">2019 - 04 - 04</td>
+    					</tr>
+    					<tr>
+    						<td class="number">7</td>
+    						<td class="name"><a href="#1">'센트레빌' TV광고 만들고 주택사업 본격 재개</a></td>
+    						<td class="date">2019 - 03 - 25</td>
+    					</tr>
+    					<tr>
+    						<td class="number">6</td>
+    						<td class="name"><a href="#1">'시흥본선 상공형휴게소' 굿디자인 국무총리상 수상</a></td>
+    						<td class="date">2019 - 03 - 04</td>
+    					</tr>
+    					<tr>
+    						<td class="number">5</td>
+    						<td class="name"><a href="#1">올해 사업 다각화 노리는 BUILD UP</a></td>
+    						<td class="date">2019 - 01 - 23</td>
+    					</tr>
+    					<tr>
+    						<td class="number">4</td>
+    						<td class="name"><a href="#1">BUILD UP 골프단 창단</a></td>
+    						<td class="date">2019 - 01 - 02</td>
+    					</tr>
+    				</tbody>
+    			</table>
+    			
+    			<table class="news n3">
+    				<thead>
+    					<tr>
+    						<td class="hnumber">번호</td>
+    						<td class="hname">제목</td>
+    						<td class="hdate">등록일</td>
+    					</tr>
+    				</thead>
+    				<tbody>
+    					<tr>
+    						<td class="number">3</td>
+    						<td class="name"><a href="#1">토목건축기술대상 수자원.해양시설 최우수상</a></td>
+    						<td class="date">2018 - 12 - 11</td>
+    					</tr>
+    					<tr>
+    						<td class="number">2</td>
+    						<td class="name"><a href="#1">BUILD UP 강남권 재입성 '날개짓'</a></td>
+    						<td class="date">2018 - 12 - 02</td>
+    					</tr>
+    					<tr>
+    						<td class="number">1</td>
+    						<td class="name"><a href="#1">"2017년 영업이익 올해보다 166.1%증가"</a></td>
+    						<td class="date">2018 - 11 - 12</td>
+    					</tr>
+    				</tbody>
+    			</table>
+    					
+    			
+    			
+    			<div class="page_num">
+    				<a href="#" class="front_page">
+    				</a>
+    				<a href="#" class="prev">
+    				</a>
+    				<a href="#" class="num_1">1</a>
+    				<a href="#" class="num_2">2</a>
+    				<a href="#" class="num_3">3</a>
+    				<a href="#" class="next">
+    				</a>
+    				<a href="#" class="back_page">
+    				</a>
+    			</div>
+    		</div>
+    	</section>
+    
+    
+    
+    
+    <footer>
+       <div class="footer_img">
+           <a href="../index.html">
+           <img src="../images/logo_white.png" alt="footer 로고이미지" style="width: 130px">
+           </a>
+       </div>
+        <adress>
+            서울시 강남구 선릉로 130길 / 대표 이소연 / 사업자등록번호 125-52-52200<br>
+대표전화 02.123.4567 / 팩스 02.123.4567 <br>Copyright(c) 2019 BUILD UP. All Rights Reserved.
+        </adress>
+        
+        <div id="top">
+        <img src="../images/up-arrow.jpg" alt="goto top" width="50px">
+    </div>
+    </footer>
+    
+    
+</div>
+    
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>BUILD UP > About Us</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="../css/AboutUs.css">
+  <link rel="stylesheet" href="../css/animate.css">
+  <script src="../js/jquery-3.4.1.min.js"></script>
+  <script src="../js/wow.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+
+
+    <script>
+        $(document).ready(function(){
+            //햄버거 메뉴
+           $(".hamburger").click(function(){
+                $(".click-hamburger").stop().show();    
+                $(this).toggleClass("is-active");
+                $(".click-hamburger").toggleClass("click");
+                $(".main-hamburger").css({"right":"0"});
+               
+            }); 
+            
+            
+            //header 두번째 콘텐츠 이동시 색깔바뀜
+            $(window).scroll(function(){
+               var scroll = $(window).scrollTop();
+                
+                var ht= $(window).height();
+
+                var scroll = $(window).scrollTop();
+                
+             
+                    if(scroll >=ht){                    
+                        $("#navTop").css({"background":"white","transition":"0.5s"});
+                        $('#navTop>h1>a>img').attr({src:'../images/logo.png',alt:'빌드업로고'});
+                        $(".hamburger>.line").css({"background":"black"});
+                    }else{
+                        $("#navTop").css({"background":"rgba(0,0,0,0)"});
+                        $('#navTop>h1>a>img').attr({src:'../images/logo_white.png',alt:'빌드업화이트로고'});
+                        $(".hamburger>.line").css({"background":"white"});
+                    };
+            });
+            
+            
+           //scorll-Top        
+                $("#top").click(function(){
+                    $('html,body').animate({scrollTop:0},1000);
+                });
+
+            new WOW().init();
+
+        });
+    </script>
+    
+    <style>
+        @media screen and (-ms-high-contrast:active), all and (-ms-high-contrast:none) {figure>.main_ment{
+            color: #fff;
+        }
+        }
+        @media all and (max-width:1500px){
+            figure>.main_ment{font-size: 110px;}
+            .content1>.content1-ment{padding: 26px 18px;}
+            .content1>.content1-ment>h2{font-size: 30px;}
+            .content1>.content1-ment>p{font-size: 16px; padding: 23px 0 0 0;}
+            .content2>.content2-ment{padding: 26px 18px;}
+            .content2>.content2-ment>h2{font-size: 30px;}
+            .content2>.content2-ment>p{font-size: 16px; padding: 23px 0 0 0;}
+            .content2>.content2-ment>.icon>ul{margin-top: 211px;}
+            .content2>.content2-ment>.icon>ul>li{height: 180px; padding-top: 34px;}
+            .content2>.content2-ment>.icon>ul>li>.fas{font-size: 55px;}
+        }
+        @media all and (min-width:1065px) and (max-width:1499px){
+            .scroll{left: 43%;}
+        }
+       @media all and (min-width:740px) and (max-width:1064px){ 
+           .main-hamburger{width: 100%;}
+           .scroll{background-size: 80%; left: 40%;}
+           figure>.main_ment{font-size: 71px;}
+           figure>.sub_ment{font-size: 20px; top: 48%;}
+           #main-content1{max-width: 100%;}
+           .content1>.content1-ment>h2{font-size: 20px;}
+           .content1>.content1-ment>p{font-size: 15px;}
+           .content2>.content2-ment>h2{font-size: 20px;}
+           .content2>.content2-ment>p{font-size: 15px;}
+           .content3-title{font-size: 46px;}
+           .content3-ment{font-size: 16px; padding: 0 20px;}
+           
+        }
+
+       @media all and (max-width:739px){ 
+           .main-hamburger{width: 100%;}
+           footer{font-size: 14px;}
+           .scroll{display: none;}
+           #main-content1{max-width: 100%; height: 1400px;}
+           figure>.main_ment{font-size: 71px;}
+           figure>.sub_ment{font-size: 20px; top: 48%;}
+           .content1>.content1_img{width: 100%;}
+           .content1>.content1-ment{width: 100%; height: 300px;}
+           .content1>.content1-ment>h2{font-size: 20px;}
+           .content1>.content1-ment>p{font-size: 13px; line-height: 26px; padding: 5px 0 0 0;}
+           .content2>.content2-ment{padding: 26px 10px; width: 100%;}
+           .content2>.content2-ment>h2{font-size: 20px;}
+           .content2>.content2-ment>p{font-size: 13px; line-height: 26px;}
+           .content2>.content2-ment>.icon>ul{margin-top: 125px;}
+           .content2-img{display: none;}
+           .content3-title{font-size: 40px; padding-top: 80px;}
+           .content3-ment{font-size: 16px; padding: 0 20px; margin-top: 4%;}
+        }
+        @media all and (max-width:610px){
+            figure>.main_ment{font-size: 46px; line-height: 54px; padding: 10px; top: 42%;}
+            figure>.sub_ment{font-size: 16px; top: 50%; padding: 13px; line-height: 24px;}
+            .scroll{display: none;}
+            .main-hamburger{width: 100%;}
+            footer{font-size: 12px;}
+            .content2>.content2-ment>.icon>ul{margin-top: 0; margin-top: 31px;}
+            .content2>.content2-ment>.icon>ul>li{width: 31%; height: 105px; padding-top: 23px;}
+            .content2>.content2-ment>.icon>ul>li>.fas{font-size: 34px;}
+            .content2>.content2-ment>.icon>ul>li>.icon-ment{font-size: 13px; margin-top: 16px;}
+            .content2-img{display: none;}
+            .content3-title{font-size: 30px; padding-top: 95px;}
+            .content3-ment{font-size: 14px; line-height: 23px;}
+            
+        }
+        
+        @media all and (max-width:450px){ 
+            #navTop>h1{width: 105px; left: 37%;}
+            #navTop>#nav_menu{padding: 4px 0; right: -0.5%;}
+            #nav_menu>.row{margin-top: 0px;}
+            .main-hamburger{width: 100%;}
+            .main-hamburger>.click-hamburger>.ham_menu{transform: translate(0px, 25%); font-size: 35px; line-height: 90px;}
+            .hamburger>.line{width: 30px; margin: 7px 0; }
+        }
+    </style>
+     
+</head>
+<body>
+    
+ <div id="wrap">
+
+    <header>
+        <nav id="navTop" style="z-index: 9">
+               <h1><a href="../index.html"><img src="../images/logo_white.png" alt="빌드업로고"></a></h1>
+               
+            <div id="nav_menu">
+               <div class="row cf">
+                  <div class="three col">
+                    <div class="hamburger" id="hamburger-1">
+                          <span class="line"></span>
+                          <span class="line"></span>
+                          <span class="line"></span>
+                    </div>
+                  </div>
+              </div>
+              
+           </div>
+             
+           <div class="main-hamburger">
+               <div class="click-hamburger">
+                   <ul class="ham_menu">
+                        <li><a href="../html/AboutUs.html">About Us</a></li>
+                        <li><a href="../html/Business.html">Business</a></li>
+                        <li><a href="../html/Career.html">Career</a></li>
+                        <li><a href="../html/Inquiry.html">Inquiry</a></li>
+                        <li><a href="../html/Notice.html">Notice</a></li>
+                  </ul>
+               </div>
+           </div>
+        </nav>
+    </header>
+
+    <figure>
+        <p class="main_ment"><span>A</span>BOUT <span>U</span>S</p>
+        <p class="sub_ment">최고의 서비스와 기술력으로 최고의 가치를 창조해가겠습니다.
+</p>
+    </figure>
+    
+    <a href="#content-box"><div class="scroll"></div>  </a>
+    
+    <section id="main-content1">
+  
+        <ul class="content1">
+            <li class="content1_img"></li>
+            <li class="content1-ment wow fadeInRight" data-wow-delay="0.3s">
+                <h2>건설로 더욱 가치있는 미래 세상을 만듭니다.</h2>
+                <p>
+                도로, 부지조성, 철도, 지하철 등 국가 기반시설에서 플랜트, 아파트, 공공기관 공사 등 건설 분야에서 전문가로 인정 받고있습니다. BUILD UP은 품질에 대한 자신감으로 아파트 브랜드 ‘hausD(하우스디)’와 오피스텔 브랜드 ‘hausD urban(하우스디 어반)’을 선보이면서 고객들로부터 사랑받고 있습니다. 또한, 해외건설업과 BTL 개발사업 등 사업분야를 다각화 해왔습니다.<br>
+                보이지 않는 곳에서 보이는 곳으로, 세상을 무대로 행복하고 풍요로운 미래를 만드는데 BUILD UP이 앞장서고 있습니다.
+                </p>
+            </li>
+        </ul>
+        
+        <ul class="content2">
+            <li class="content2-img" ></li>
+            <li class="content2-ment wow fadeInLeft" data-wow-delay="0.6s">
+                <h2>창사 이래 우수한 기술력과 차별화된 노하우를 축적해 왔습니다.</h2>
+                <p>
+                그 성과를 인정받아 대통령, 국토교통부장관, 공공기관장 등으로부터 품질우수시공에 대한 각종 표창을 수상하면서 대보의 옹골찬 장인정신을 대외적으로 입증 받았습니다.<br><br>
+
+특히 차별화된 기술력과 우수한 품질을 바탕으로 3년 연속 한국토지주택공사(LH) 우수시공업체에 선정되는 등 총 5회의 수상 기록을 보유하고 있습니다.<br><br>
+               
+               또한 원가절감을 통한 수익률 제고를 위해 다양한 건설 신기술을 개발해 특허 등록함으로써 앞선 기술력을 확보했습니다.<br><br>
+
+그동안 쌓아온 기술력과 재무건전성을 바탕으로 해외사업, SOC, 환경, BTL 사업과 민간주택 사업 등 기획제안형 신규 사업분야를 개척해 나감으로써 제 2의 도약을 이루어 나가고 있습니다.<br><br>
+
+이러한 성과를 바탕으로 2017년에는 창사이래 최초로 수주 1조원을 돌파하는 쾌거를 달성하기도 했습니다.
+                </p>
+                
+                <div class="icon">
+                    <ul>
+                        <li class="wow fadeInUp">
+                            <i class="fas fa-globe"></i>
+                            <p class="icon-ment">GLOBAL</p>
+                        </li>
+                        <li class="wow fadeInUp" data-wow-delay="0.3s">
+                           <i class="fas fa-chart-line"></i>
+                           <p class="icon-ment">TRUST</p>
+                        </li>
+                        <li class="wow fadeInUp" data-wow-delay="0.5s">
+                           <i class="fas fa-street-view"></i>
+                            <p class="icon-ment">SAFE</p>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </section>
+    
+    <section id="content3">
+        <div class="content3-line"></div>
+        <div class="wow fadeInUp" data-wow-delay="0.4s">
+            <div class="content3-title">Sustainability Management</div>
+            <div class="content3-ment">
+                환경친화적 경영과 더 좋은 삶을 위한 가치창조 기술력과 신뢰를 바탕으로 투명하고 정직한 기업문화를 선도합니다.
+            </div>
+        </div>
+    </section>
+  
+    
+    
+    
+    
+    
+    <footer>
+       <div class="footer_img">
+           <a href="../index.html">
+           <img src="../images/logo_white.png" alt="footer 로고이미지" style="width: 130px">
+           </a>
+       </div>
+        <adress>
+            서울시 강남구 선릉로 130길 / 대표 이소연 / 사업자등록번호 125-52-52200<br>
+대표전화 02.123.4567 / 팩스 02.123.4567 <br>Copyright(c) 2019 BUILD UP. All Rights Reserved.
+        </adress>
+        
+        <div id="top">
+        <img src="../images/up-arrow.jpg" alt="goto top" width="50px">
+    </div>
+    </footer>
+    
+    
+</div>
+    
+</body>
+</html>

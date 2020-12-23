@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>BUILD UP > Career</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="../css/Career.css">
+  <link rel="stylesheet" href="../css/animate.css">
+  <script src="../js/jquery-3.4.1.min.js"></script>
+  <script src="../js/wow.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+
+
+    <script>
+        $(document).ready(function(){
+            //햄버거 메뉴
+           $(".hamburger").click(function(){
+                $(".click-hamburger").stop().show();    
+                $(this).toggleClass("is-active");
+                $(".click-hamburger").toggleClass("click");
+                $(".main-hamburger").css({"right":"0"});
+               
+            }); 
+            
+            
+            //header 두번째 콘텐츠 이동시 색깔바뀜
+            $(window).scroll(function(){
+               var scroll = $(window).scrollTop();
+                
+                var ht= $(window).height();
+
+                var scroll = $(window).scrollTop();
+                
+             
+                    if(scroll >=ht){                    
+                        $("#navTop").css({"background":"white","transition":"0.5s"});
+                        $('#navTop>h1>a>img').attr({src:'../images/logo.png',alt:'빌드업로고'});
+                        $(".hamburger>.line").css({"background":"black"});
+                    }else{
+                        $("#navTop").css({"background":"rgba(0,0,0,0)"});
+                        $('#navTop>h1>a>img').attr({src:'../images/logo_white.png',alt:'빌드업화이트로고'});
+                        $(".hamburger>.line").css({"background":"white"});
+                    };
+            });
+            
+            
+           //scorll-Top        
+                $("#top").click(function(){
+                    $('html,body').animate({scrollTop:0},1000);
+                });
+
+            new WOW().init();
+
+        });
+    </script>
+    
+    <style>
+        @media screen and (-ms-high-contrast:active), all and (-ms-high-contrast:none) {figure>.main_ment{
+            color: #fff;
+        }
+        }
+        @media all and (max-width:1500px){
+            figure>.main_ment{font-size: 110px;} 
+            .main-box>.sub-box{width: 100%; left: 0; height: 125%; bottom: -97%;}
+            #content-3>div{height: 450px;}
+            #content-3>.con-img>img{height: 450px;}
+            .quote{margin: 0 0 9% 0;}
+            #content-1{height: 1200px;}
+            #content-2{display: none;}
+        }
+        @media all and (min-width:1065px) and (max-width:1499px){
+            .scroll{left: 43%;}
+        }
+       @media all and (max-width:1064px){ 
+           .main-hamburger{width: 100%;}
+           .scroll{background-size: 80%; left: 40%;}
+           figure>.main_ment{font-size: 71px;}
+           figure>.sub_ment{font-size: 20px; top: 48%;}  
+           .main-box>.together-title{font-size: 37px;}
+           .main-box>.sub-box>.sub-title>.sub-ment>li>.number{width: 50px; height: 50px; line-height: 50px; font-size: 23px;}
+           .main-box>.sub-box>.sub-title>.sub-ment>li>.number-next{margin-top: 1%;}
+           #content-1{height: 950px;}
+           #content-2{display: none;}
+           #content-3>div{height: 350px;}
+           #content-3>.con-img>img{height: 350px;}
+           #content-3>.box2{padding: 4.5% 2.5%;}
+           #content-3>.box2>p{font-size: 29px;}
+           #content-3>.box2>span{font-size: 17px; line-height: 29px;}
+           #content-3>.box4{padding: 4.5% 2.5%;}
+           #content-3>.box4>p{font-size: 29px;}
+           #content-3>.box4>span{font-size: 17px; line-height: 29px;}
+           #content-3>.box6{padding: 4.5% 2.5%;}
+           #content-3>.box6>p{font-size: 29px;}
+           #content-3>.box6>span{font-size: 17px; line-height: 29px;}
+           .box-line{width: 63px;}
+           
+        }
+
+       @media all and (max-width:739px){ 
+           .main-hamburger{width: 100%;}
+           footer{font-size: 14px;}
+           .scroll{display: none;}
+           #main-content1{max-width: 100%;}
+           figure>.main_ment{font-size: 71px;}
+           figure>.sub_ment{font-size: 20px; top: 48%;}
+           #content-3>div{height: 250px; width: 50%;}
+           #content-3>.con-img>img{height: 250px;}
+           .box-line{width: 48px;}
+           #content-1>.main-box>.build-togehter{height: 300px;}
+           #content-1>.main-box>.together-ment{top: 44%; padding: 10px; font-size: 15px;}
+           #content-1>.main-box>.sub-box>.sub-img{display: none;}
+           #content-1>.main-box>.sub-box>.sub-title{width: 100%;}
+           #content-1>.main-box>.sub-box>.sub-title>.sub-ment{margin-left: 0; padding: 3%;}
+           #content-1>.main-box>.sub-box>.sub-title>.sub-ment>li>.number-next{font-size: 17px;}
+           #content-2{display: none;}
+           #content-3>.box2{padding: 3.5% 3.5%;}
+           #content-3>.box2>p{font-size: 21px;}
+           #content-3>.box2>span{font-size: 14px; line-height: 18px;}
+           #content-3>.box4{padding: 3.5% 3.5%;}
+           #content-3>.box4>p{font-size: 21px;}
+           #content-3>.box4>span{font-size: 14px; line-height: 24px;}
+           #content-3>.box6{padding: 3.5% 3.5%;}
+           #content-3>.box6>p{font-size: 21px;}
+           #content-3>.box6>span{font-size: 14px; line-height: 24px;}
+        }
+        @media all and (max-width:610px){
+            figure>.main_ment{font-size: 50px; line-height: 54px; padding: 10px; top: 42%;}
+            figure>.sub_ment{font-size: 16px; top: 50%; padding: 13px; line-height:24px;}
+            .scroll{display: none;}
+            .main-hamburger{width: 100%;}
+            .our{font-size: 30px;} 
+            footer{font-size: 12px;}    
+            
+        }
+        
+        @media all and (max-width:450px){ 
+            #navTop>h1{width: 105px; left: 37%;}
+            #navTop>#nav_menu{padding: 4px 0; right: -0.5%;}
+            #nav_menu>.row{margin-top: 0px;}
+            .main-hamburger{width: 100%;}
+            .main-hamburger>.click-hamburger>.ham_menu{transform: translate(0px, 25%); font-size: 35px; line-height: 90px;}
+            .hamburger>.line{width: 30px; margin: 7px 0; }
+        }
+    </style>
+     
+</head>
+<body>
+    
+ <div id="wrap">
+
+    <header>
+        <nav id="navTop" style="z-index: 9">
+               <h1><a href="../index.html"><img src="../images/logo_white.png" alt="빌드업로고"></a></h1>
+               
+            <div id="nav_menu">
+               <div class="row cf">
+                  <div class="three col">
+                    <div class="hamburger" id="hamburger-1">
+                          <span class="line"></span>
+                          <span class="line"></span>
+                          <span class="line"></span>
+                    </div>
+                  </div>
+              </div>
+              
+           </div>
+             
+           <div class="main-hamburger">
+               <div class="click-hamburger">
+                   <ul class="ham_menu">
+                        <li><a href="../html/AboutUs.html">About Us</a></li>
+                        <li><a href="../html/Business.html">Business</a></li>
+                        <li><a href="../html/Career.html">Career</a></li>
+                        <li><a href="../html/Inquiry.html">Inquiry</a></li>
+                        <li><a href="../html/Notice.html">Notice</a></li>
+                  </ul>
+               </div>
+           </div>
+        </nav>
+    </header>
+
+    <figure>
+        <p class="main_ment"><span>C</span>areer</p>
+        <p class="sub_ment">BUILD UP은 미래를 함께 만들어 갈 열정적인 인재의 아름다운 도전을 기다립니다.
+        </p>
+    </figure>
+    
+    <a href="#content-box"><div class="scroll"></div>  </a>
+   
+    <section id="content-1">
+        <div class="line"></div>
+        <div class="our wow fadeInUp" data-wow-delay="0.2s">Value No.1 Solution Provider</div>
+        
+        <div class="main-box">   
+            <img src="../images/Career/img1.jpg" alt="career" class="build-togehter">
+            <p class="together-title">Build Together</p>
+            <p class="together-ment">튼튼한 오늘을 만들어 든든한 내일을 엽니다. 사람도, 기업도 오늘이 튼튼해야 내일이 든든합니다.</p>
+            <div class="sub-box">
+                 <div class="sub-title">
+                     <ul class="sub-ment wow fadeInUp">
+                         <li>
+                            <p class="number">1</p>
+                            <p class="number-next">모든 관습에 얽매이지 않고 새로운 가치와 변화를
+                             모색하는 사람</p>
+                         </li>
+                         <li>
+                            <p class="number color1">2</p>
+                            <p class="number-next">현실에 안주하지 않고 세계 최고에 도전하는 열정을 갖춘 사람</p>
+                         </li>
+                         <li>
+                            <p class="number color2">3</p>
+                            <p class="number-next">맡은 분야에서 도전정신과 창의적 사고를 통해
+                                반드시 성과를 내는 사람</p>
+                         </li>
+                     </ul>
+                 </div>
+                <div class="sub-img wow fadeInRight" data-wow-delay="0.5s"><img src="../images/Career/build1.jpg" alt=""></div>
+            </div>
+        </div>
+    </section>
+  
+    <section id="content-2">
+        <div class="quote wow fadeInUp">
+            <i class="fas fa-quote-left"></i>
+            <p class="quote-ment"><span>BUILD UP</span>은 삶의 질 향상을 위해<br> 다양한 복리후생 제도를 제공하고 있습니다.</p>
+            <i class="fas fa-quote-right"></i>
+        </div>
+    </section>
+    
+    <section id="content-3">
+        <div class="box1 con-img wow fadeInUp" data-wow-delay="0.1s"><img src="../images/Career/box1.jpg" alt="기본체계"></div>
+        <div class="box2">
+            <p>기본체계</p>
+            <div class="box-line"></div>
+            <span>4대 보험 가입<br>퇴직연금 가입<br>장기근속자 및 우수사원 해외연수(연 1회)<br>사내근로복지기금(또는 사우회) 운영<br>사업소 근무자 숙소 제공<br>각종 사내 동호회 운영비 지원</span>
+        </div>
+        <div class="box3 con-img wow fadeInUp" data-wow-delay="0.3s">
+            <img src="../images/Career/box2.jpg" alt="교육/문화 지원">
+        </div>
+        <div class="box4">
+            <p>교육/문화 지원</p>
+            <div class="box-line"></div>
+            <span>자녀 학자금 지원<br>(고등학교/대학교)<br>자기계발비 지원<br>휴양 시설 제공(콘도 및 전원주택)</span>
+        </div>
+        <div class="box5 con-img wow fadeInUp">
+            <img src="../images/Career/box3.jpg" alt="의료/경조사 지원">
+        </div>
+        <div class="box6">
+            <p>의료/경조사 지원</p>
+            <div class="box-line"></div>
+            <span>정기 건강검진<br>(격년 실시)<br>개인행사시 경조금 지원<br>각 명절 선물 지급<br>(설, 추석 등)</span>
+        </div>
+    </section>
+    
+    
+    
+    <footer>
+       <div class="footer_img">
+           <a href="../index.html">
+           <img src="../images/logo_white.png" alt="footer 로고이미지" style="width: 130px">
+           </a>
+       </div>
+        <adress>
+            서울시 강남구 선릉로 130길 / 대표 이소연 / 사업자등록번호 125-52-52200<br>
+대표전화 02.123.4567 / 팩스 02.123.4567 <br>Copyright(c) 2019 BUILD UP. All Rights Reserved.
+        </adress>
+        
+        <div id="top">
+        <img src="../images/up-arrow.jpg" alt="goto top" width="50px">
+    </div>
+    </footer>
+    
+    
+</div>
+    
+</body>
+</html>

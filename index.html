@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>BUILD UP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script src="js/jquery.mousewheel.min.js"></script>
+  <script>
+        $(document).ready(function(){
+           //햄버거 메뉴
+           $(".hamburger").click(function(){
+                $(".click-hamburger").stop().show();    
+                $(this).toggleClass("is-active");
+                $(".click-hamburger").toggleClass("click");
+                $(".main-hamburger").css({"right":"0"});
+               
+            }); 
+            
+            
+            //header 두번째 콘텐츠 이동시 색깔바뀜
+            $(window).scroll(function(){
+                var scroll = $(window).scrollTop();
+                var ht= $(window).height();
+                var scroll = $(window).scrollTop();            
+                if(scroll >=ht){                    
+                    $("#navTop").css({"background":"white","transition":"0.5s"});
+                    $('#navTop>h1>a>img').attr({src:'images/logo1.png',alt:'로고'});
+                    $(".hamburger>.line").css({"background":"black"});
+                }else{
+                    $("#navTop").css({"background":"rgba(0,0,0,0)"});
+                    $('#navTop>h1>a>img').attr({src:'images/logo1_white.png',alt:'빌드업화이트로고'});
+                    $(".hamburger>.line").css({"background":"white"});
+                };
+            });
+            //마우스 휠처리
+            $(".box").mousewheel(function(event, delta){
+                console.log("aaaaa");
+                event.preventDefault();
+                if(delta > 0) {
+                   try {
+                       var prev = $(this).prev().offset().top;
+                   }catch(e) {return false;}
+
+                   $("html, body").stop().animate({scrollTop:prev}, 1000);
+
+                 } else if(delta < 0) {
+                   try {
+                       var next = $(this).next().offset().top;
+                   }catch(e){return false;}
+
+                    $("html, body").stop().animate({scrollTop:next}, 1000);
+               }
+            });
+            
+           //scorll-Top        
+            $("#top").click(function(){
+                $('html,body').animate({scrollTop:0},1000);
+            });
+
+            new WOW().init();
+
+        });
+    </script>
+    
+    <style>
+        @media screen and (-ms-high-contrast:active), all and (-ms-high-contrast:none) {figure>.main_ment{
+            color: #fff;
+        }
+        }
+        @media all and (max-width:1500px){
+            figure>.main_ment{font-size: 67px; line-height: 78px;}
+            figure>.sub_ment{font-size: 28px; top: 52%;}
+            .scroll{transform: translate(21%,70%);}
+            .three-box>ul>li>.white_box>p{font-size: 21px;}
+            .support>.support-build{right: -3%;}
+            .three-box>ul>li>.box-sub{margin-top: 25%; font-size: 16px; padding: 12px;}
+            .support>.support-box{width: 60%;}
+            .service>ul>a>li{padding: 29px 0 40px 40px; width: 45%;}
+            .service>ul>a>li>.title{float: none;}
+            .service>ul>a>li>.sub-title{text-align: left; font-size: 15px; margin-top: 8px;}
+        }
+        @media all and (min-width:1065px) and (max-width:1499px){
+            .scroll{left: 43%;}
+        }
+       @media all and (min-width:740px) and (max-width:1023px){ 
+           figure>.main_ment{font-size: 52px; line-height: 68px; top: 38%;}
+           figure>.sub_ment{font-size: 25px;}
+           figure>.shape1{width: 50px; height: 60px; left: 66%; top: 30%;}
+           figure>.shape2{width: 50px; height: 60px; left: 30%; top: 60%;}
+           .main-hamburger{width: 100%;}
+           .scroll{background-size: 80%; left: 43%;}
+           .three-box>ul>li>.white_box>p{font-size: 17px; margin-top: 21%;}
+           section#content-box{padding-bottom: 2%;}
+           .our{font-size: 50px;}
+           .attach>.attach-main{font-size: 43px;}
+           .support>.support-build{right: -5%;}
+           .support>.support-ment{font-size: 50px; top: -45px;}
+           .service>.service-ment{font-size: 50px;}
+           .support>.support-box{width: 90%;}
+           .service>ul>a>li{height: 134px; width: 45%;}
+        }
+
+       @media all and (max-width:739px){ 
+           figure>.main_ment{font-size: 51px; line-height: 63px; top: 38%;}
+           figure>.sub_ment{font-size: 28px; top: 51%;}
+           figure>.shape1{width: 45px; height: 57px; left: 64%; top: 30%;}
+           figure>.shape2{width: 45px; height: 57px; left: 27%; top: 59%;}
+           .main-hamburger{width: 100%;}
+           .scroll{display: none;}
+           .three-box>ul>li{width:100%; height: 575px; margin-bottom: 35px; margin: 0 0 30px 0;}
+           section#content-box{padding-bottom: 0;}
+           .three-box>ul>li>.white_box{height: 13%; bottom: 21.5%;}
+           .three-box>ul>li>.white_box>p{font-size: 22px; margin-top: 12%;}
+           .three-box>ul>li>.box-sub{margin-top: 16%; font-size: 16px; padding: 17px;}
+           .three-box>ul>li>.white_box>.white-line{height: 16px;}
+           .support>.support-box{width: 85%;}
+           .support>.support-build{right: -8%;}
+           .support>.support-ment{font-size: 50px; top: -37px;}
+           .service>.service-ment{font-size: 50px;}
+           .service>ul{padding-top: 205px; margin-left: -17%;}
+           .service>ul>a>li{padding: 29px 0 37px 22px; font-size: 17px; height: 135px; width: 44%;}
+           .service>ul>a>li>.sub-title{font-size: 14px;}
+           footer{font-size: 14px;}
+        }
+        @media all and (max-width:610px){
+            figure>.main_ment{font-size: 35px; line-height: 54px; padding: 10px;}
+            figure>.sub_ment{font-size: 25px; top: 50%;}
+            figure>.shape1{width: 38px; height: 42px; top: 33%;}
+            figure>.shape2{width: 38px; height: 42px; top: 58%; }
+            .scroll{display: none;}
+            .main-hamburger{width: 100%;}
+            .three-box>ul{width: 100%;}
+            section#content-box{padding-bottom: 0%;}
+            .attach{margin-top: 0; margin-bottom: 150px;}
+            .attach>.attach-main{font-size: 25px; padding-top: 140px; color: black;} 
+            .attach>.attach-sub{font-size: 16px; color: black;}
+            .support>.support-box{width: 108%; margin-left: 2%; left: 0;}
+            .support>.support-box>.support-box-ment{font-size: 26px;}
+            .support>.support-box>.support-box-subment{font-size: 15px;}
+            .support{width: 89%; margin-left: 0;}
+            .service>ul{margin-left: -23%;}
+            .service>ul>a>li{width: 47%; margin: 5px;}
+            .three-box>ul>li{height: 535px;}
+            .three-box>ul>li>.white_box{bottom: 43%;}
+            .three-box>ul>li>.white_box>.white-line{top: 21%;}
+            .three-box>ul>li>.white_box>p{margin-top: 13%;}
+            .our{font-size: 30px;}
+            .support>.support-ment{font-size: 40px;}
+            .service>.service-ment{font-size: 40px;}
+            .service>.service-subment{left: 9%; font-size: 15px; padding-right: 10px;}
+            .service>.service-build{left: -9%;}
+            footer{font-size: 12px;}
+            
+        }
+        
+        @media all and (max-width:450px){ 
+            #navTop>h1{width: 105px; left: 37%;}
+            #navTop>#nav_menu{padding: 4px 0; right: -0.5%;}
+            #nav_menu>.row{margin-top: 0px;}
+            .main-hamburger{width: 100%;}
+            .main-hamburger>.click-hamburger>.ham_menu{transform: translate(0px, 25%); font-size: 35px; line-height: 90px;}
+            .hamburger>.line{width: 30px; margin: 7px 0; }
+            figure>.main_ment{font-size: 29px; line-height: 41px; top: 40%;}
+            figure>.sub_ment{font-size: 19px; top: 50%;}
+            figure>.shape1{width: 24px; height: 30px; top: 36%;}
+            figure>.shape2{width: 24px; height: 30px;}
+            .our{font-size: 40px;}   
+        }
+    </style>
+     
+</head>
+<body>    
+ <div id="wrap">
+   <div class="box">
+        <header>
+            <nav id="navTop" style="z-index: 9">
+                   <h1><a href="index.html"><img src="images/logo1_white.png" alt="뉴트리에이스로고"></a></h1>
+
+                <div id="nav_menu">
+                   <div class="row cf">
+                      <div class="three col">
+                        <div class="hamburger" id="hamburger-1">
+                              <span class="line"></span>
+                              <span class="line"></span>
+                              <span class="line"></span>
+                        </div>
+                      </div>
+                  </div>
+
+               </div>
+
+               <div class="main-hamburger">
+                   <div class="click-hamburger">
+                       <ul class="ham_menu">
+                            <li><a href="html/AboutUs.html">About Us</a></li>
+                            <li><a href="html/Business.html">Business</a></li>
+                            <li><a href="html/Career.html">Career</a></li>
+                            <li><a href="html/Inquiry.html">Inquiry</a></li>
+                            <li><a href="html/Notice.html">Notice</a></li>
+                      </ul>
+                   </div>
+               </div>
+            </nav>
+        </header>
+
+        <figure>
+            <div class="shape1"></div>
+            <div class="shape2"></div>
+            <p class="main_ment">Nature <span>No.1</span><br><span>Health</span> Functional Food</p>
+            <p class="sub_ment">자연을 연구하는 건강한 기업</p>
+        </figure>
+
+        <a href="#content-box"><div class="scroll"></div></a>
+    </div>
+    <div class="box">
+        <section id="content-box">
+           <div class="line"></div>
+           <div class="our wow fadeInUp">Our Business</div>
+
+           <div class="three-box">
+               <ul>
+                   <li class="box1 wow fadeInUp" data-wow-delay="0.5s">
+                       <img src="images/content1-img1.jpg" alt="건축이미지">
+                       <div class="white_box">
+                           <div class="white-line"></div>
+                           <p>제품소개</p>
+                       </div>
+
+                       <div class="box-sub">
+                           뉴트리에이스의 제품을 소개합니다.
+                       </div>
+                   </li>
+
+                   <li class="box2 wow fadeInUp" data-wow-delay="0.6s">
+                       <img src="images/content1-img2.jpg" alt="토목이미지">
+                       <div class="white_box">
+                           <div class="white-line"></div>
+                           <p>제조 / 가공</p>
+                       </div>
+
+                       <div class="box-sub">
+                           뉴트리에이스의 제조, 생산과정입니다. 관련 자세한 문의는 게시판을 이용해 주세요.
+                       </div>
+                   </li>
+
+                   <li class="box3 wow fadeInUp" data-wow-delay="0.7s">
+                       <img src="images/content1-img3.jpg" alt="플랜트이미지">
+                       <div class="white_box">
+                           <div class="white-line"></div> 
+                           <p>소량 / 소분</p>
+                       </div>
+
+                       <div class="box-sub">
+                           뉴트리에이스는 소량 라벨 출력 시스템과 소량 소분을 통하여 재고 부담을 없애 드립니다. 원하시는 만큼 자체 브랜드 상품을 개발하세요!
+                       </div>
+                   </li>
+               </ul>
+           </div>
+
+        </section>
+    </div>
+    <div class="box">
+        <section>
+            <div class="attach">
+                <p class="attach-main">IMAGINE IT, AND BUILD IT</p>
+                <p class="attach-sub">고객의 행복한 미래가 BUILD UP의 미래입니다.</p>
+                <p class="more"><a href="html/AboutUs.html">FIND OUT MORE</a></p>
+            </div>
+        </section>
+    </div> 
+    <div class="box">
+        <section>
+            <div class="support">
+                <p class="support-ment wow fadeInUp" data-wow-delay="0.3s">SUPPORT</p>
+                <p class="support-build">BUILD UP SUPPORT</p>
+
+                <div class="support-box wow fadeInRight" data-wow-delay="0.3s">
+                    <p class="support-box-ment">ORDER INTAKE<br><span class="business">BUSINESS</span></p>
+                    <p class="support-box-subment">시대에 맞는 건축혁명을<br> 이끌어 갑니다.</p>
+                    <a href="html/Business.html"><p class="plus">+</p></a>
+                </div>
+
+            </div>
+        </section>
+    </div> 
+    <div class="box">
+        <section>
+            <div class="service">
+                <p class="service-ment wow fadeInUp" data-wow-delay="0.3s">SERVICE</p>
+                <p class="service-build">BUILD UP SERVICE</p>
+                <p class="service-subment">'변화를 선도하는 기업’, ‘인간 중심의 기업’ 그리고 ‘믿음을 주는 기업’<br>고객을 위한 최고의 서비스를 제공합니다.</p>
+
+                <ul>
+                    <a href="#1">
+                        <li class="wow fadeInUp" data-wow-delay="0.5s">
+                            <p class="title">대표전화</p>
+                            <p class="sub-title">02-123-4567<br>평일 09:00 ~ 18:00</p>
+                        </li>
+                    </a>
+                    <a href="html/Career.html">
+                        <li class="wow fadeInUp" data-wow-delay="0.5s">
+                            <p class="title">채용공고</p>
+                            <p class="sub-title">진취적인 열정과 적극적인 혁신 마인드를 가진 <br>여러분들을 환영합니다.</p>
+                        </li>
+                    </a>
+                    <a target="_blank" href="http://www.facebook.com">
+                        <li class="wow fadeInUp" data-wow-delay="0.5s">
+                            <p class="title">SNS</p>
+                            <p class="sub-title">BUILD UP의 새로운 소식들을 <br>SNS에서 확인해보세요.</p>
+                        </li>
+                    </a>
+                    <a href="html/Notice.html">
+                        <li class="wow fadeInUp" data-wow-delay="0.5s">
+                            <p class="title">공지사항</p>
+                            <p class="sub-title">BUILD UP의 공지사항을 <br>확인하실 수 있습니다.</p>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </section>
+
+        <footer>
+           <div class="footer_img">
+               <a href="index.html">
+               <img src="images/logo_white.png" alt="footer 로고이미지" style="width: 130px">
+               </a>
+           </div>
+            <adress>
+                서울시 강남구 선릉로 130길 / 대표 이소연 / 사업자등록번호 125-52-52200<br>
+    대표전화 02.123.4567 / 팩스 02.123.4567 <br>Copyright(c) 2019 BUILD UP. All Rights Reserved.
+            </adress>
+
+            <div id="top">
+            <img src="images/up-arrow.jpg" alt="goto top" width="50px">
+        </div>
+        </footer>   
+    </div>
+</div>
+    
+</body>
+</html>

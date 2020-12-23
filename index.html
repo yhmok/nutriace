@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8">
-  <title>BUILD UP</title>
+  <title>Nutriace</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/animate.css">
@@ -56,6 +56,45 @@
                }
             });
             
+            var banner = $(".banner").find("ul");
+            var bannerWidth = banner.children().outerWidth(); //border를 포함한 li넓이
+            var bannerHeight = banner.children().outerHeight();
+            var length = banner.children().length; //li의 갯수
+            var setIntervalId =0;
+            
+            rollingBanner();
+            function rollingBanner(){
+                setIntervalId = setInterval(function(){
+                   $("#next").trigger("click");
+                }, 2500); 
+            }
+            banner.css("width", bannerWidth*length+"px");//ul의 넓이값 : 340*6
+            banner.css("height", bannerHeight+"px");
+
+            $("#next").click(function(){
+                banner.animate({left:-bannerWidth+"px"}, 1500, function(){
+                    // 첫번째 이미지를 마지막 끝에 복사(이동이 아니라 복사)
+                    $(this).append("<li>"+$(this).find("li:first").html()+"</li>");
+                    $(this).find("li:first").remove(); //삭제
+                    $(this).css("left", 0);
+                });
+            });
+            $("#prev").click(function(){
+                banner.prepend("<li>"+banner.find("li:last").html()+"</li>");
+                banner.find("li:last").remove();
+                banner.css("left", -bannerWidth);
+                banner.stop().animate({left:0}, 1500);
+            });
+            
+            $(".banner").on({
+                mouseenter:function(){
+                    clearInterval(setIntervalId);
+                },
+                mouseleave:function(){
+                    rollingBanner();
+                }
+            });
+                        
            //scorll-Top        
             $("#top").click(function(){
                 $('html,body').animate({scrollTop:0},1000);
@@ -104,7 +143,7 @@
            .service>ul>a>li{height: 134px; width: 45%;}
         }
 
-       @media all and (max-width:739px){ 
+       @media all and (max-width:739px){
            figure>.main_ment{font-size: 51px; line-height: 63px; top: 38%;}
            figure>.sub_ment{font-size: 28px; top: 51%;}
            figure>.shape1{width: 45px; height: 57px; left: 64%; top: 30%;}
@@ -154,6 +193,9 @@
             .service>.service-subment{left: 9%; font-size: 15px; padding-right: 10px;}
             .service>.service-build{left: -9%;}
             footer{font-size: 12px;}
+            .support{top:480px;}
+            .service{top: 160px;}
+            .attach{background-image: none;}
             
         }
         
@@ -168,7 +210,10 @@
             figure>.sub_ment{font-size: 19px; top: 50%;}
             figure>.shape1{width: 24px; height: 30px; top: 36%;}
             figure>.shape2{width: 24px; height: 30px;}
-            .our{font-size: 40px;}   
+            .our{font-size: 40px;}
+            .support{top:480px;}
+            .service{top: 160px;}
+            .attach{background-image: none;}
         }
     </style>
      
@@ -263,13 +308,33 @@
 
         </section>
     </div>
-    <div class="box">
+    <div class="box box_banner">
         <section>
             <div class="attach">
                 <p class="attach-main">IMAGINE IT, AND BUILD IT</p>
                 <p class="attach-sub">고객의 행복한 미래가 BUILD UP의 미래입니다.</p>
                 <p class="more"><a href="html/AboutUs.html">FIND OUT MORE</a></p>
             </div>
+            <!--상품에 대한 베너-->
+            <h3 class="banner_header">상품목록</h3>
+            <div class="banner">
+               <ul>
+                   <li><img src="images/ride1.jpg" alt=""></li>
+                   <li><img src="images/ride2.jpg" alt=""></li>
+                   <li><img src="images/ride3.jpg" alt=""></li>
+                   <li><img src="images/ride4.jpg" alt=""></li>
+                   <li><img src="images/ride5.jpg" alt=""></li>
+                   <li><img src="images/ride6.jpg" alt=""></li>
+                   <li><img src="images/ride1.jpg" alt=""></li>
+                   <li><img src="images/ride2.jpg" alt=""></li>
+                   <li><img src="images/ride3.jpg" alt=""></li>
+                   <li><img src="images/ride4.jpg" alt=""></li>
+                   <li><img src="images/ride5.jpg" alt=""></li>
+                   <li><img src="images/ride6.jpg" alt=""></li>
+               </ul>
+            </div>
+            <div id="prev"><img src="images/prev.png" alt="이전"></div>
+            <div id="next"><img src="images/next.png" alt="다음"></div>
         </section>
     </div> 
     <div class="box">
@@ -326,7 +391,7 @@
         <footer>
            <div class="footer_img">
                <a href="index.html">
-               <img src="images/logo_white.png" alt="footer 로고이미지" style="width: 130px">
+               <img src="images/logo1_white.png" alt="footer 로고이미지" style="width: 130px">
                </a>
            </div>
             <adress>

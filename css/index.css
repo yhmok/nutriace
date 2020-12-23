@@ -74,14 +74,14 @@
     }
 
 .main-hamburger{position: absolute; right: -100%; top: 0; width: 35%; height: 100vh; z-index: -999;}
-.click-hamburger{width: 100%; height: 100vh; background: #0081c5; position: absolute;  z-index: -999; top: 0; left: 100%;
+.click-hamburger{width: 100%; height: 100vh; background: #3ca749; position: absolute;  z-index: -999; top: 0; left: 100%;
         transition: 0.5s;}
 .click-hamburger.click{left: 0; transition: 0.5s}
 .main-hamburger>.click-hamburger>.ham_menu{color: white; font-size: 40px; width: 100%; height: 100%; text-align: center; line-height: 115px; transform: translate(0, 25%); font-family: 'NanumSquareEB';}
 
 /*키이미지*/
 figure{background: url(../images/bg1.jpg); width: 100%; height: 100vh; background-repeat: no-repeat; background-position: center top; background-size: cover;}
-figure>.shape1{width: 60px; height: 80px; background: #0081c5; transform:skewX(-45deg); position: absolute; left: 60%; top: 23%; animation-name: slide_left; animation-duration: 2s;}
+figure>.shape1{width: 60px; height: 80px; background: #3ca749; transform:skewX(-45deg); position: absolute; left: 60%; top: 23%; animation-name: slide_left; animation-duration: 2s;}
 @keyframes slide_left{
     from{
         transform:skewX(-45deg) translate(800%, 0);
@@ -92,7 +92,7 @@ figure>.shape1{width: 60px; height: 80px; background: #0081c5; transform:skewX(-
         opacity: 1;
     }
 }
-figure>.shape2{width: 60px; height: 80px; background: #0081c5; transform: skewX(-45deg); position: absolute; left:38%; top: 61%; animation-name: slide-right; animation-duration: 2s; }
+figure>.shape2{width: 60px; height: 80px; background: #3ca749; transform: skewX(-45deg); position: absolute; left:38%; top: 61%; animation-name: slide-right; animation-duration: 2s; }
 @keyframes slide-right{
     from{
         transform:skewX(-45deg) translate(-800%, 0);
@@ -124,7 +124,7 @@ figure>.main_ment{color: transparent; text-align: center; text-align: center; fo
     }
 }
 figure>.main_ment>span{color: white;}
-figure>.main_ment:hover span{color: #0081c5}
+figure>.main_ment:hover span{color: #3ca749}
 figure>.main_ment:hover{color:white; -webkit-text-stroke: 0px; transition: 1s;}
 figure>.sub_ment{color: white; font-size: 33px; font-family: 'NanumSquareB'; position: absolute; top: 52%; width: 100%; text-align: center; line-height: 75px; animation-name: slide-up2; animation-duration: 2s}
 @keyframes slide-up2{
@@ -146,7 +146,7 @@ figure>.sub_ment{color: white; font-size: 33px; font-family: 'NanumSquareB'; pos
 /*content-1*/
 .box{width: 100%; height: 100vh; position:relative;}
 section#content-box{width: 100%; padding-top: 80px; padding-bottom: 10%;}
-.line{width: 2px; height: 90px; background: #0081c5; margin: 0 auto;}
+.line{width: 2px; height: 90px; background: #3ca749; margin: 0 auto;}
 .our{text-align: center; font-size: 50px; font-family: 'Montserrat-ExtraBold'; margin-top: 20px;}
 .three-box{width: 100%; height: 400px; margin-top: 80px; position: relative}
 .three-box>ul{width: 80%; margin: 0 auto; position: relative}
@@ -161,8 +161,25 @@ section#content-box:after{display: block; content: ""; clear: both;}
 .attach{background: url(../images/attach.jpg)no-repeat center; width: 100%; height: 400px; background-size: cover; background-attachment: fixed; _margin-top: 80px; _margin-bottom: 200px;}
 .attach>.attach-main{font-size: 50px; text-align: center; color: white; font-family: 'NanumSquareEB'; padding-top: 110px; }
 .attach>.attach-sub{color: white; font-size: 20px; text-align: center; margin-top: 10px; }
-.attach>.more{color: black; border-bottom: 5px solid #0081c5; width: 155px; margin: 0 auto; text-align: center; margin-top: 70px; font-family: 'NanumSquareEB'; }
+.attach>.more{color: black; border-bottom: 5px solid #3ca749; width: 155px; margin: 0 auto; text-align: center; margin-top: 70px; font-family: 'NanumSquareEB'; }
 .attach>.more:hover{width: 130px; transition: 1s;}
+
+/*상품베너추가*/
+.box_banner {position: relative;}
+h3.banner_header {width: 93px;font-size: 20px;  letter-spacing: 5px; margin:0 auto; position: relative; top: 150px; font-family: 'NanumSquareEB';}
+.banner {
+    width:1500px; /* 300px *5 */
+    height:205px;
+    margin:0 auto;
+    position:relative; top: 180px; left: 50px;
+    overflow: hidden;
+}
+.banner ul {position:absolute; left:0; top:0; width: 4080px;}
+.banner ul li {float:left; width:300px; height: 210px;}
+.banner ul li img {display: block; width:260px; margin: 0 auto;}
+.box_banner #prev {position: absolute; left: 10%; top: 70%; border:none; cursor: pointer;}
+.box_banner #next {position: absolute; right: 5%; top: 70%; border:none; cursor: pointer;}
+
 
 /*content-3*/
 .support{background: URL(../images/support-img.jpg) no-repeat center; width: 50%; height: 450px; position: relative; top:190px; margin-left: 20%; _margin-bottom: 200px;}
@@ -176,16 +193,16 @@ section#content-box:after{display: block; content: ""; clear: both;}
     writing-mode: vertical-lr; 
     position: absolute; right: -2%; top: -12%; font-size: 15px;}
 .support>.support-subment{ position: absolute; left: 5%; top: 120px;}
-.support>.support-box{width: 42%; height: 300px; position: absolute; left: 85%; top: 38%; border: 1px solid #0081c5; background: rgba(255,255,255,0.9); }
-.support>.support-box:hover{background:#0081c5; transition: 0.5s; }
+.support>.support-box{width: 42%; height: 300px; position: absolute; left: 85%; top: 38%; border: 1px solid #3ca749; background: rgba(255,255,255,0.9); }
+.support>.support-box:hover{background:#3ca749; transition: 0.5s; }
 .support>.support-box:hover .support-box-ment{color: white;}
 .support>.support-box:hover .support-box-ment>span{color: white;}
 .support>.support-box:hover .support-box-subment{color: white;}
 .support>.support-box:hover .plus{color: white; border: 1px solid white;}
 .support>.support-box>.support-box-ment{font-size: 30px; font-family: 'NanumSquareEB'; margin-top: 15%; margin-right: 10%; text-align: right;}
-.support>.support-box>.support-box-ment>span{color: #0081c5}
+.support>.support-box>.support-box-ment>span{color: #3ca749}
 .support>.support-box>.support-box-subment{font-size: 17px; margin-right: 10%; margin-top: 5%; color: black; text-align: right;}
-.support>.support-box>a>.plus{font-size: 30px; border: 1px solid #0081c5; display: inline-block; padding: 10px; height: 40px; line-height: 20px; color: #0081c5; position: absolute; left: 10%; bottom: 15%;}
+.support>.support-box>a>.plus{font-size: 30px; border: 1px solid #3ca749; display: inline-block; padding: 10px; height: 40px; line-height: 20px; color: #3ca749; position: absolute; left: 10%; bottom: 15%;}
 
 /*content-4*/   
 .service{background: #f5f5f5; width: 80%; height: 400px; position: relative; top: 150px;margin-left: 20%; margin-bottom: 200px;}

@@ -80,7 +80,7 @@
 .main-hamburger>.click-hamburger>.ham_menu{color: white; font-size: 40px; width: 100%; height: 100%; text-align: center; line-height: 115px; transform: translate(0, 25%); font-family: 'NanumSquareEB';}
 
 /*키이미지*/
-figure{background: url(../images/bg.jpg); width: 100%; height: 100vh; background-repeat: no-repeat; background-position: center top; background-size: cover;}
+figure{background: url(../images/bg1.jpg); width: 100%; height: 100vh; background-repeat: no-repeat; background-position: center top; background-size: cover;}
 figure>.shape1{width: 60px; height: 80px; background: #0081c5; transform:skewX(-45deg); position: absolute; left: 60%; top: 23%; animation-name: slide_left; animation-duration: 2s;}
 @keyframes slide_left{
     from{

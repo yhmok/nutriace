@@ -4,61 +4,37 @@
   <meta charset="utf-8">
   <title>BUILD UP > Business</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-  <link rel="stylesheet" href="../css/Business.css">
-  <link rel="stylesheet" href="../css/animate.css">
-  <script src="../js/jquery-3.4.1.min.js"></script>
-  <script src="../js/wow.min.js"></script>
+  <link rel="stylesheet" href="css/Business.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer_sub.css">
+  <link rel="stylesheet" href="css/animate.css">
+  
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/wow.min.js"></script>
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
 
 
     <script>
         $(document).ready(function(){
-            //햄버거 메뉴
-           $(".hamburger").click(function(){
-                $(".click-hamburger").stop().show();    
-                $(this).toggleClass("is-active");
-                $(".click-hamburger").toggleClass("click");
-                $(".main-hamburger").css({"right":"0"});
-               
-            }); 
+            $("header").load("header.html");
+            $("footer").load("footer.html");
             
-            
-            //header 두번째 콘텐츠 이동시 색깔바뀜
-            $(window).scroll(function(){
-               var scroll = $(window).scrollTop();
-                
-                var ht= $(window).height();
-
-                var scroll = $(window).scrollTop();
-                
-             
-                    if(scroll >=ht){                    
-                        $("#navTop").css({"background":"white","transition":"0.5s"});
-                        $('#navTop>h1>a>img').attr({src:'../images/logo.png',alt:'빌드업로고'});
-                        $(".hamburger>.line").css({"background":"black"});
-                    }else{
-                        $("#navTop").css({"background":"rgba(0,0,0,0)"});
-                        $('#navTop>h1>a>img').attr({src:'../images/logo_white.png',alt:'빌드업화이트로고'});
-                        $(".hamburger>.line").css({"background":"white"});
-                    };
-            });
-            
-            
-           //scorll-Top        
-                $("#top").click(function(){
-                    $('html,body').animate({scrollTop:0},1000);
-                });
-
             new WOW().init();
-
+            
+            //scroll-box클릭시 한 페이지 넘기기
+            $(".scroll").click(function(e){
+                e.preventDefault();
+                var box_top = $("#content-1").offset().top;
+                $("html, body").stop().animate({scrollTop:box_top}, 1000);
+            });
         });
     </script>
     
     <style>
-        @media screen and (-ms-high-contrast:active), all and (-ms-high-contrast:none) {figure>.main_ment{
-            color: #fff;
-        }
+        @media screen and (-ms-high-contrast:active), all and (-ms-high-contrast:none) {
+            figure>.main_ment{color: #fff;}
         }
         @media all and (max-width:1500px){
             figure>.main_ment{font-size: 110px;}
@@ -148,36 +124,7 @@
     
  <div id="wrap">
 
-    <header>
-        <nav id="navTop" style="z-index: 9">
-               <h1><a href="../index.html"><img src="../images/logo_white.png" alt="빌드업로고"></a></h1>
-               
-            <div id="nav_menu">
-               <div class="row cf">
-                  <div class="three col">
-                    <div class="hamburger" id="hamburger-1">
-                          <span class="line"></span>
-                          <span class="line"></span>
-                          <span class="line"></span>
-                    </div>
-                  </div>
-              </div>
-              
-           </div>
-             
-           <div class="main-hamburger">
-               <div class="click-hamburger">
-                   <ul class="ham_menu">
-                        <li><a href="../html/AboutUs.html">About Us</a></li>
-                        <li><a href="../html/Business.html">Business</a></li>
-                        <li><a href="../html/Career.html">Career</a></li>
-                        <li><a href="../html/Inquiry.html">Inquiry</a></li>
-                        <li><a href="../html/Notice.html">Notice</a></li>
-                  </ul>
-               </div>
-           </div>
-        </nav>
-    </header>
+    <header></header>
 
     <figure>
         <p class="main_ment"><span>B</span>usiness</p>
@@ -192,7 +139,7 @@
         <div class="our wow fadeInUp" data-wow-delay="0.2s">Field of Business</div>
         
         <div class="architecture">
-            <img src="../images/Business/architecture.jpg" alt="건축">
+            <img src="images/Business/architecture.jpg" alt="건축">
             <p class="provide wow fadeInLeft" data-wow-delay="0.7s">Provide Reliability</p>
             <ul>
                 <li class="a-ex1 wow fadeInUp" data-wow-delay="0.3s">건축사업</li>
@@ -200,21 +147,21 @@
                 BUILD UP은 내실경영, 윤리경영을 바탕으로 시공능력과 노하우가 필요한
 관급공사를 완벽하게 수행하며 건설의 새로운 강자로 인정받고 있습니다.
                 </li>
-                <li class="a-ex3 wow fadeInUp"><img src="../images/Business/architecture-sub.jpg" alt="건축"> </li>
+                <li class="a-ex3 wow fadeInUp"><img src="images/Business/architecture-sub.jpg" alt="건축"> </li>
             </ul>
         </div>
         
         <div class="civil">
             <ul>
                 <li class="c-ex1 wow fadeInUp" data-wow-delay="1s">
-                    <img src="../images/Business/civil.jpg" alt="토목">
+                    <img src="images/Business/civil.jpg" alt="토목">
                 </li>
                 <li class="c-ex2 wow fadeInUp" data-wow-delay="0.5s">
                    <div>토목사업</div>
                     세계 최초의 도로-철도 병용 사장현수교인 터키 보스포러스 제3교, 세계 3위의 단경간 현수교인 울산대교, 쿠웨이트 자베르 코즈웨이 해상교량 공사와 같은 초대형 프로젝트를 통해 초장대교량 분야를 최고의 기술력으로 선도하고 있습니다. 또한 2014년 싱가포르 주롱 해저 유류기지 공사의 성공적 수행을 통해 국내 토목 건설의 미개척 분야로 남아 있던 지하 건축물 사업의 새로운 지평을 열었습니다. 앞으로도 선진 기술력 확보와 아프리카, 중남미 등 해외 시장 다변화에 주력하며 명실상부한 글로벌 건설 리더로 도약하기 위해 모든 역량을 집중할 것입니다.   
                 </li>
                 <li class="c-ex3 wow fadeInUp">
-                    <img src="../images/Business/civil-sub.jpg" alt="토목">
+                    <img src="images/Business/civil-sub.jpg" alt="토목">
                 </li>
                 <li class="c-ex4 wow fadeInLeft" data-wow-delay="0.5s">
                     Bridges <span>&amp;</span> Road
@@ -224,9 +171,9 @@
         
         <div class="plant">
             <ul>
-                <li class="p-ex1 wow fadeInUp" data-wow-delay="0.8s"><img src="../images/Business/plant1.jpg" alt="토목"></li>
-                <li class="p-ex2 wow fadeInUp" data-wow-delay="0.9s"><img src="../images/Business/plant2.jpg" alt="토목"></li>
-                <li class="p-ex3 wow fadeInUp" data-wow-delay="1s"><img src="../images/Business/plant3.jpg" alt="토목"></li>
+                <li class="p-ex1 wow fadeInUp" data-wow-delay="0.8s"><img src="images/Business/plant1.jpg" alt="토목"></li>
+                <li class="p-ex2 wow fadeInUp" data-wow-delay="0.9s"><img src="images/Business/plant2.jpg" alt="토목"></li>
+                <li class="p-ex3 wow fadeInUp" data-wow-delay="1s"><img src="images/Business/plant3.jpg" alt="토목"></li>
                 <li class="p-ex4 wow fadeInRight" data-wow-delay="1.2s">NUCLEAR POWER</li>
                 <li class="p-ex5 wow fadeInUp" data-wow-delay="0.7s">
                     <div>플랜트사업</div>
@@ -237,30 +184,7 @@
             </ul>
         </div>
     </section>
-  
-  
-    
-    
-    
-    
-    
-    <footer>
-       <div class="footer_img">
-           <a href="../index.html">
-           <img src="../images/logo_white.png" alt="footer 로고이미지" style="width: 130px">
-           </a>
-       </div>
-        <adress>
-            서울시 강남구 선릉로 130길 / 대표 이소연 / 사업자등록번호 125-52-52200<br>
-대표전화 02.123.4567 / 팩스 02.123.4567 <br>Copyright(c) 2019 BUILD UP. All Rights Reserved.
-        </adress>
-        
-        <div id="top">
-        <img src="../images/up-arrow.jpg" alt="goto top" width="50px">
-    </div>
-    </footer>
-    
-    
+    <footer></footer>
 </div>
     
 </body>

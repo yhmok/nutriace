@@ -24,61 +24,6 @@
     font-family: 'NanumSquareB';
 }
 
-/*메뉴*/
-#navTop{position: fixed; height: 70px; width: 100%; z-index: 1; padding: 10px 0;}
-#navTop>h1{width: 130px; position: absolute; padding: 6px 0; left: 2%; z-index: -1111;}
-#navTop>#nav_menu{margin-left: 20px; position: absolute; right: 1.5%; font-family: 'NanumSquareEB'; font-size: 35px; color: white; cursor: pointer; padding: 6px 0;}
-
-/*햄버거 메뉴*/
-#nav_menu > .row {
-        width: 20px;
-        float: right;
-        margin-right: 30px;
-    }
-    #nav_menu > .row:after {
-        content: '';
-        display: block;
-        clear: both;
-    }
-    .hamburger > .line{
-      width: 35px;
-      height: 3px;
-      background-color: white;
-      display: block;
-      margin: 8px 0;
-      -webkit-transition: all 0.3s ease-in-out;
-      -o-transition: all 0.3s ease-in-out;
-      transition: all 0.3s ease-in-out;
-    }
-
-    .hamburger:hover{
-      cursor: pointer;
-    }
-
-    #hamburger-1.is-active .line:nth-child(2){
-      opacity: 0;
-    }
-
-    #hamburger-1.is-active .line:nth-child(1){
-      -webkit-transform: translateY(13px) rotate(45deg);
-      -ms-transform: translateY(13px) rotate(45deg);
-      -o-transform: translateY(13px) rotate(45deg);
-      transform: translateY(13px) rotate(45deg);
-    }
-
-    #hamburger-1.is-active .line:nth-child(3){
-      -webkit-transform: translateY(-8px) rotate(-45deg);
-      -ms-transform: translateY(-8px) rotate(-45deg);
-      -o-transform: translateY(-8px) rotate(-45deg);
-      transform: translateY(-8px) rotate(-45deg);
-    }
-
-.main-hamburger{position: absolute; right: -100%; top: 0; width: 35%; height: 100vh; z-index: -999;}
-.click-hamburger{width: 100%; height: 100vh; background: #3ca749; position: absolute;  z-index: -999; top: 0; left: 100%;
-        transition: 0.5s;}
-.click-hamburger.click{left: 0; transition: 0.5s}
-.main-hamburger>.click-hamburger>.ham_menu{color: white; font-size: 40px; width: 100%; height: 100%; text-align: center; line-height: 115px; transform: translate(0, 25%); font-family: 'NanumSquareEB';}
-
 /*키이미지*/
 figure{background: url(../images/bg1.jpg); width: 100%; height: 100vh; background-repeat: no-repeat; background-position: center top; background-size: cover;}
 figure>.shape1{width: 60px; height: 80px; background: #3ca749; transform:skewX(-45deg); position: absolute; left: 60%; top: 23%; animation-name: slide_left; animation-duration: 2s;}
@@ -152,7 +97,7 @@ section#content-box{width: 100%; padding-top: 80px; padding-bottom: 10%;}
 .three-box>ul{width: 80%; margin: 0 auto; position: relative}
 .three-box>ul>li{width: 30.4%; float: left; margin: 0 0 0 2%; position: relative;}
 .three-box>ul>li>.white_box{width: 60%; height: 20%; background: rgba(255,255,255,0.9); position: absolute; bottom: -10%; right: 0;}
-.three-box>ul>li>.white_box>.white-line{width: 33%; height: 15px; background: #0081c5; position: absolute; top: 32%; left: -9%;}
+.three-box>ul>li>.white_box>.white-line{width: 33%; height: 15px; background: #3ca749; position: absolute; top: 32%; left: -9%;}
 .three-box>ul>li>.white_box>p{font-size: 25px; font-family: 'NanumSquareEB'; margin-top: 15%; text-align: center; font-family: 'Montserrat-ExtraBold';}
 .three-box>ul>li>.box-sub{position: absolute; margin-top: 15%; font-size: 17px; text-align: left; padding: 25px; line-height: 25px;}
 section#content-box:after{display: block; content: ""; clear: both;}
@@ -193,7 +138,7 @@ h3.banner_header {width: 93px;font-size: 20px;  letter-spacing: 5px; margin:0 au
     writing-mode: vertical-lr; 
     position: absolute; right: -2%; top: -12%; font-size: 15px;}
 .support>.support-subment{ position: absolute; left: 5%; top: 120px;}
-.support>.support-box{width: 42%; height: 300px; position: absolute; left: 85%; top: 38%; border: 1px solid #3ca749; background: rgba(255,255,255,0.9); }
+.support>.support-box{width: 42%; height: 300px; position: absolute; left: 85%; top: 38%; border: 1px solid #3ca749; background: rgba(255,255,255,0.9);}
 .support>.support-box:hover{background:#3ca749; transition: 0.5s; }
 .support>.support-box:hover .support-box-ment{color: white;}
 .support>.support-box:hover .support-box-ment>span{color: white;}
@@ -219,10 +164,3 @@ h3.banner_header {width: 93px;font-size: 20px;  letter-spacing: 5px; margin:0 au
 .service>ul>a>li{width: 40%; height: 120px; padding: 40px 0 40px 40px; float: left; border: 0.5px solid #ccc; margin: 10px; font-size: 20px; font-family: 'NanumSquareEB';}
 .service>ul>a>li>.title{float: left; color: #252525}
 .service>ul>a>li>.sub-title{font-size: 16px; line-height: 20px; text-align: right; margin-right: 7%; font-family: 'NanumSquareR'; color: #646464;}
-
-/*footer*/ 
-footer{position: absolute; bottom: 0; width: 100%; height: 190px; background: #252525; color: #ccc; text-align: center; padding-top: 45px; clear: both; line-height: 20px; font-size: 14px;}
-footer>.footer_img>img{margin-bottom: 10px;}
-
-/*top*/
-#top{position: absolute; bottom: 160px; right: 3%; cursor: pointer;}

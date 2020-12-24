@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>NUTRIACE</title>
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+</head>
+<script>
+    $(function(){
+        //scorll-Top버튼 클릭시 맨 위로 올라가기    
+        $("#top").click(function(){
+            $('html,body').animate({scrollTop:0},1000);
+        });    
+    });         
+</script>
+<body>   
+    <footer>
+       <div class="footer_img">
+           <a href="index.html">
+           <img src="images/logo1_white.png" alt="footer 로고이미지" style="width: 130px">
+           </a>
+       </div>
+        <adress>
+            서울시 강남구 선릉로 130길 / 대표 목경우 / 사업자등록번호 125-52-52200<br>
+대표전화 02.123.4567 / 팩스 02.123.4567 <br>Copyright(c) 2019 BUILD UP. All Rights Reserved.
+        </adress>
+
+        <div id="top">
+            <img src="images/up-arrow.jpg" alt="goto top" width="50px">
+        </div>
+    </footer>  
+</body>
+</html>

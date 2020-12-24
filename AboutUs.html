@@ -2,56 +2,32 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8">
-  <title>BUILD UP > About Us</title>
+  <title>NUTRIACE > About Us</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-  <link rel="stylesheet" href="../css/AboutUs.css">
-  <link rel="stylesheet" href="../css/animate.css">
-  <script src="../js/jquery-3.4.1.min.js"></script>
-  <script src="../js/wow.min.js"></script>
+  <link rel="stylesheet" href="css/AboutUs.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer_sub.css">
+  <link rel="stylesheet" href="css/animate.css">
+  
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/wow.min.js"></script>
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
 
-
     <script>
         $(document).ready(function(){
-            //햄버거 메뉴
-           $(".hamburger").click(function(){
-                $(".click-hamburger").stop().show();    
-                $(this).toggleClass("is-active");
-                $(".click-hamburger").toggleClass("click");
-                $(".main-hamburger").css({"right":"0"});
-               
-            }); 
-            
-            
-            //header 두번째 콘텐츠 이동시 색깔바뀜
-            $(window).scroll(function(){
-               var scroll = $(window).scrollTop();
-                
-                var ht= $(window).height();
-
-                var scroll = $(window).scrollTop();
-                
-             
-                    if(scroll >=ht){                    
-                        $("#navTop").css({"background":"white","transition":"0.5s"});
-                        $('#navTop>h1>a>img').attr({src:'../images/logo.png',alt:'빌드업로고'});
-                        $(".hamburger>.line").css({"background":"black"});
-                    }else{
-                        $("#navTop").css({"background":"rgba(0,0,0,0)"});
-                        $('#navTop>h1>a>img').attr({src:'../images/logo_white.png',alt:'빌드업화이트로고'});
-                        $(".hamburger>.line").css({"background":"white"});
-                    };
-            });
-            
-            
-           //scorll-Top        
-                $("#top").click(function(){
-                    $('html,body').animate({scrollTop:0},1000);
-                });
-
+            $("header").load("header.html");
+            $("footer").load("footer.html");
+ 
             new WOW().init();
-
+            
+            //scroll-box클릭시 한 페이지 넘기기
+            $(".scroll").click(function(e){
+                e.preventDefault();
+                var box_top = $("#main-content1").offset().top-130;
+                $("html, body").stop().animate({scrollTop:box_top}, 1000);
+            });
         });
     </script>
     
@@ -137,44 +113,13 @@
      
 </head>
 <body>
-    
  <div id="wrap">
-
     <header>
-        <nav id="navTop" style="z-index: 9">
-               <h1><a href="../index.html"><img src="../images/logo_white.png" alt="빌드업로고"></a></h1>
-               
-            <div id="nav_menu">
-               <div class="row cf">
-                  <div class="three col">
-                    <div class="hamburger" id="hamburger-1">
-                          <span class="line"></span>
-                          <span class="line"></span>
-                          <span class="line"></span>
-                    </div>
-                  </div>
-              </div>
-              
-           </div>
-             
-           <div class="main-hamburger">
-               <div class="click-hamburger">
-                   <ul class="ham_menu">
-                        <li><a href="../html/AboutUs.html">About Us</a></li>
-                        <li><a href="../html/Business.html">Business</a></li>
-                        <li><a href="../html/Career.html">Career</a></li>
-                        <li><a href="../html/Inquiry.html">Inquiry</a></li>
-                        <li><a href="../html/Notice.html">Notice</a></li>
-                  </ul>
-               </div>
-           </div>
-        </nav>
+        
     </header>
-
     <figure>
         <p class="main_ment"><span>A</span>BOUT <span>U</span>S</p>
-        <p class="sub_ment">최고의 서비스와 기술력으로 최고의 가치를 창조해가겠습니다.
-</p>
+        <p class="sub_ment">최고의 서비스와 기술력으로 최고의 가치를 창조해가겠습니다.</p>
     </figure>
     
     <a href="#content-box"><div class="scroll"></div>  </a>
@@ -237,29 +182,9 @@
             </div>
         </div>
     </section>
-  
-    
-    
-    
-    
-    
     <footer>
-       <div class="footer_img">
-           <a href="../index.html">
-           <img src="../images/logo_white.png" alt="footer 로고이미지" style="width: 130px">
-           </a>
-       </div>
-        <adress>
-            서울시 강남구 선릉로 130길 / 대표 이소연 / 사업자등록번호 125-52-52200<br>
-대표전화 02.123.4567 / 팩스 02.123.4567 <br>Copyright(c) 2019 BUILD UP. All Rights Reserved.
-        </adress>
         
-        <div id="top">
-        <img src="../images/up-arrow.jpg" alt="goto top" width="50px">
-    </div>
     </footer>
-    
-    
 </div>
     
 </body>

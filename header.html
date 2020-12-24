@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>NUTRIACE</title>
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">    
+    
+    <script type="text/javascript">
+        $(function(){
+            
+            //햄버거 메뉴
+           $(".hamburger").click(function(){
+                $(".click-hamburger").stop().show();    
+                $(this).toggleClass("is-active");
+                $(".click-hamburger").toggleClass("click");
+                $(".main-hamburger").toggleClass("right");
+            }); 
+                        
+            //header 두번째 콘텐츠 이동시 색깔바뀜
+            $(window).scroll(function(){
+                var scroll = $(window).scrollTop();
+                var ht= $(window).height();
+                var scroll = $(window).scrollTop();            
+                if(scroll >=ht){                    
+                    $("#navTop").css({"background":"white","transition":"0.5s"});
+                    $('#navTop>h1>a>img').attr({src:'images/logo1.png',alt:'로고'});
+                    $(".hamburger>.line").css({"background":"black"});
+                }else{
+                    $("#navTop").css({"background":"rgba(0,0,0,0)"});
+                    $('#navTop>h1>a>img').attr({src:'images/logo1_white.png',alt:'빌드업화이트로고'});
+                    $(".hamburger>.line").css({"background":"white"});
+                };
+            });
+        });
+    </script>
+        
+</head>
+<body>
+    <header>
+        <nav id="navTop" style="z-index: 9">
+               <h1><a href="index.html"><img src="images/logo1_white.png" alt="뉴트리에이스로고"></a></h1>
+
+            <div id="nav_menu">
+               <div class="row cf">
+                  <div class="three col">
+                    <div class="hamburger" id="hamburger-1">
+                          <span class="line"></span>
+                          <span class="line"></span>
+                          <span class="line"></span>
+                    </div>
+                  </div>
+              </div>
+
+           </div>
+           <div class="main-hamburger">
+               <div class="click-hamburger">
+                   <ul class="ham_menu">
+                        <li><a href="AboutUs.html">About Us</a></li>
+                        <li><a href="html/Business.html">Business</a></li>
+                        <li><a href="html/Career.html">Career</a></li>
+                        <li><a href="html/Inquiry.html">Inquiry</a></li>
+                        <li><a href="html/Notice.html">Notice</a></li>
+                  </ul>
+               </div>
+           </div>
+        </nav>
+    </header>
+</body>
+</html>

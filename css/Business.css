@@ -74,7 +74,7 @@
     }
 
 .main-hamburger{position: absolute; right: -100%; top: 0; width: 35%; height: 100vh; z-index: -999;}
-.click-hamburger{width: 100%; height: 100vh; background: #0081c5; position: absolute;  z-index: -999; top: 0; left: 100%;
+.click-hamburger{width: 100%; height: 100vh; background: #3ca749; position: absolute;  z-index: -999; top: 0; left: 100%;
         transition: 0.5s;}
 .click-hamburger.click{left: 0; transition: 0.5s}
 .main-hamburger>.click-hamburger>.ham_menu{color: white; font-size: 40px; width: 100%; height: 100%; text-align: center; line-height: 115px; transform: translate(0, 25%); font-family: 'NanumSquareEB';}
@@ -123,7 +123,7 @@ figure>.sub_ment{color: white; font-size: 22px; font-family: 'NanumSquareB'; pos
 
 /*content-1*/
 #content-1{width: 100%; padding-top: 80px;}
-.line{width: 2px; height: 90px; background: #0081c5; margin: 0 auto;}
+.line{width: 2px; height: 90px; background: #3ca749; margin: 0 auto;}
 .our{text-align: center; font-size: 50px; font-family: 'Montserrat-ExtraBold'; margin-top: 20px;}
 #content-1>.architecture{max-width: 70%; margin: 0 auto; margin-top: 45px; position: relative;}
 #content-1>.architecture>img{width: 100%;}
@@ -151,10 +151,3 @@ figure>.sub_ment{color: white; font-size: 22px; font-family: 'NanumSquareB'; pos
 #content-1>.plant>ul>.p-ex5>div{font-size: 50px; font-family: 'NanumSquareEB'; margin-bottom: 20px;}
 #content-1>.plant>ul>.p-ex6{width: 33%; font-size: 17px; padding: 10px; line-height: 30px; font-family: 'NanumSquareR'; margin-bottom: 15%;}
 #content-1>.plant>ul>.p-ex7{width: 33%; font-size: 17px; padding: 10px; line-height: 30px; font-family: 'NanumSquareR';}
-
-/*footer*/ 
-footer{ clear: both; position: relative; width: 100%; height: 190px; background: #252525; color: #ccc; text-align: center; padding-top: 45px; clear: both; line-height: 20px; font-size: 14px;}
-footer>.footer_img>img{margin-bottom: 10px;}
-
-/*top*/
-#top{position: absolute; bottom: 160px; right: 3%;}
